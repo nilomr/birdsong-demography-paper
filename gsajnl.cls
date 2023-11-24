@@ -338,7 +338,8 @@ THE ABSTRACT\vskip12pt}\let\go\relax\fi
 {%
 \vskip37pt%
 {\raggedleft \titlefont \@title\vskip13pt}%
-{\raggedleft \parbox{1\linewidth}{\raggedleft \@author}\vskip3pt}
+% {\raggedleft \parbox{1\linewidth}{\raggedleft \@author}\vskip3pt} % full line width
+{\raggedleft \parbox{0.64\linewidth}{\raggedleft \@author}\vskip3pt}
 {\raggedleft \@corres\vskip3pt}
 }\egroup%
 {%
