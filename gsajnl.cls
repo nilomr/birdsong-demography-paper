@@ -155,6 +155,7 @@ urlcolor=hypercolor}
   maxbibnames = 10,
   isbn=false,
   eprint=false,
+  dashed=false,
   sorting=none
 ]{biblatex}
 
@@ -172,7 +173,9 @@ urlcolor=hypercolor}
 % title in sentence case
 \DeclareFieldFormat[article, inbook, incollection, inproceedings, misc, thesis, unpublished]{sentencecase}{\MakeSentenceCase*{#1}}
 % print journaltitle without italics
-\DeclareFieldFormat[article]{journaltitle}{#1}
+\DeclareFieldFormat[article, inbook, incollection, inproceedings, misc, thesis, unpublished]{journaltitle}{#1}
+% print booktitle without italics
+\DeclareFieldFormat[article, inbook, incollection, inproceedings, misc, thesis, unpublished]{booktitle}{#1}
 % print title in normal font (not italic)
 % remove PMID and ISSN from articles in bibliography
 \AtEveryBibitem{%
@@ -203,10 +206,8 @@ urlcolor=hypercolor}
 \DeclareFieldFormat{pages}{#1}
 
 
-% remove In: from articles
-\renewbibmacro{in:}{%
-  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
-
+% remove In: from all types 
+\renewbibmacro{in:}{}
 \defbibenvironment{bibliography}
   {\list
      {\printtext[labelnumberwidth]{%
