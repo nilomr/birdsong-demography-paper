@@ -147,9 +147,84 @@ urlcolor=hypercolor}
 % Bibliography
 
 \usepackage[
-backend=biber,
-style=apa,
+  autocite    = superscript,
+  backend     = biber,
+  style       = numeric-comp,
+  bibstyle= authoryear,
+  giveninits=true,
+  maxbibnames = 10,
+  isbn=false,
+  eprint=false,
+  sorting=none
 ]{biblatex}
+
+
+\DeclareFieldFormat{bibentrysetcount}{\mkbibparens{\mknumalph{#1}}}
+% \DeclareFieldFormat{labelnumberwidth}{\mkbibbrackets{#1}}
+\DeclareFieldFormat{labelnumberwidth}{#1\adddot\midsentence}
+
+% do not add month and day to date
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryBibitem{\clearfield{day}}
+
+% print title without quotation marks
+\DeclareFieldFormat[article, inbook, incollection, inproceedings, misc, thesis, unpublished]{title}{#1}
+% title in sentence case
+\DeclareFieldFormat[article, inbook, incollection, inproceedings, misc, thesis, unpublished]{sentencecase}{\MakeSentenceCase*{#1}}
+% print journaltitle without italics
+\DeclareFieldFormat[article]{journaltitle}{#1}
+% print title in normal font (not italic)
+% remove PMID and ISSN from articles in bibliography
+\AtEveryBibitem{%
+  \ifentrytype{online}
+    {}
+    {\clearfield{urlyear}\clearfield{urlmonth}\clearfield{urlday}}}
+\AtEveryBibitem{\clearfield{pmid}}
+\AtEveryBibitem{\clearname{pmid}}
+\AtEveryBibitem{\clearlist{pmid}}
+\AtEveryBibitem{\clearfield{pmcid}}
+% remove any note field from citations
+\AtEveryBibitem{\clearfield{note}}
+
+% do not print DOI: just print the full doi url
+\DeclareFieldFormat{doi}{%
+  \ifhyperref
+    {\href{https://doi.org/#1}{\nolinkurl{https://doi.org/#1}}}
+    {\nolinkurl{https://doi.org/#1}}}
+
+% remove pmid and issn from citations in text
+\AtEveryBibitem{\clearfield{issn}}
+% remove visited from all types except online
+% print article volume in italics
+\DeclareFieldFormat[article]{volume}{\textit{#1}\addcomma}
+% do not print number
+\DeclareFieldFormat[article]{number}{}
+% get rid of pp
+\DeclareFieldFormat{pages}{#1}
+
+
+% remove In: from articles
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+
+\defbibenvironment{bibliography}
+  {\list
+     {\printtext[labelnumberwidth]{%
+    \printfield{prefixnumber}%
+    \printfield{labelnumber}}}
+     {\setlength{\labelwidth}{\labelnumberwidth}%
+      \setlength{\leftmargin}{\labelwidth}%
+      \setlength{\labelsep}{\biblabelsep}%
+      \addtolength{\leftmargin}{\labelsep}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{\hss##1}}
+  {\endlist}
+  {\item}
+
+\DeclareNameAlias{sortname}{last-first}
+
+
 \addbibresource{zotero-library.bib}
 
 
