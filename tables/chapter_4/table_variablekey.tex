@@ -31,10 +31,10 @@
   mean\_dispersal\_\allowbreak distance & Mean postnatal dispersal distance, in metres, of the birds in the neighbourhood\\
   prop\_same\_birds &  Proportion of the birds in a neighbourhood that were already there the year before \\
   mean\_age & Mean age of the birds in a neighbourhood \\
-  n\_current\_songs & Absolute number of song types in a neighbourhood (not unique song types) \\
+  n\_current\_songs & Absolute number of song types in a neighbourhood (not unique song types), which correlates with neighbourhood size but we use to further adjust for the fact that some birds sing more songs \\
   gp(x, y) & 2D Gaussian process to model spatial dependency in the data  \\
-  n\_unique\_\allowbreak current\_songs & Number of unique song types in a neighbourhood\\
+  n\_unique\_\allowbreak current\_songs & Number of unique song types in a neighbourhood \\
   uniqueness &  The uniqueness of a bird's repertoire, quantified as 1 minus the logarithm of the mean frequency of the songs in its repertoire for a given year  \\
-  recorded & Number of birds recorded singing in a neighbourhood \\
+  recorded & Number of birds recorded singing in a neighbourhood, which is linearly correlated with neighbourhood size \\
   prop\_shared & Proportion of the song types in a neighbourhood that were already present. Reported as 1- prop\_shared: 'song turnover'\\
   \end{longtblr}
