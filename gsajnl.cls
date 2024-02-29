@@ -73,8 +73,8 @@ urlcolor=hypercolor}
 \newcommand\corresfont{\normalfont\sffamily\fontsize{8}{4}\selectfont}
 \newcommand{\datesfont}{\normalfont\sffamily\itshape\fontsize{8}{10}\selectfont}
 \renewcommand\UrlFont{\color{urlcolor}\sffamily}
-\newcommand{\absfont}{\normalfont\sffamily\linespread{1}\fontsize{9}{12}\selectfont}
-\newcommand{\absheadfont}{\raggedright\normalfont\fontsize{11}{10}\sffamily\bfseries\color{accent_color}\selectfont}
+\newcommand{\absfont}{\normalfont\linespread{1}\fontsize{9}{12}\sffamily\bfseries\color{accent_color3}\selectfont}
+\newcommand{\absheadfont}{\raggedright\normalfont\fontsize{9}{10}\sffamily\bfseries\color{accent_color}\selectfont}
 % \newcommand{\keywordsfont}{\normalfont\sffamily\linespread{1}\fontsize{8.9}{11}\selectfont}
 % \newcommand{\keywordheadfont}{\normalfont\sffamily\fontsize{7.8}{9}\selectfont\bfseries}
 \newcommand{\copyrightfont}{\normalfont\sffamily\fontsize{8}{9}\selectfont}
@@ -407,7 +407,7 @@ THE ABSTRACT\vskip12pt}\let\go\relax\fi
 \parbox{\dimexpr\linewidth}{%
     %% v1.8: turn on line numbers
 	\ifthenelse{\boolean{displaylineno}}{\internallinenumbers}{}%
-    {\absheadfont\bfseries Summary}\vskip3.5pt \absfont \theabstract
+    {\absheadfont\bfseries SUMMARY}\vskip3.5pt \absfont \theabstract
 }%
 \vskip15.5pt%
 \noindent
@@ -432,7 +432,7 @@ THE ABSTRACT\vskip12pt}\let\go\relax\fi
 \vskip12pt%
 \abscontent
 }%
-\vskip25pt%
+\vskip15pt%
 }%
 
 % Other packages
