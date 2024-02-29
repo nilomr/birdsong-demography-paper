@@ -48,6 +48,16 @@ filecolor=hypercolor,
 linkcolor=hypercolor,
 urlcolor=hypercolor}
 
+% To correct case in namerefs
+\newcommand{\lnameref}[1]{%
+\bgroup
+\let\nmu\MakeLowercase
+\nameref{#1}\egroup}
+\newcommand{\fnameref}[1]{%
+\bgroup
+\def\nmu{\let\nmu\MakeLowercase}%
+\nameref{#1}\egroup}
+\newcommand{\nmu}{} % use this command before affected word
 
 % Author and affiliation
 \RequirePackage{authblk}
@@ -65,8 +75,8 @@ urlcolor=hypercolor}
 \renewcommand\UrlFont{\color{urlcolor}\sffamily}
 \newcommand{\absfont}{\normalfont\sffamily\linespread{1}\fontsize{9}{12}\selectfont}
 \newcommand{\absheadfont}{\raggedright\normalfont\fontsize{11}{10}\sffamily\bfseries\color{accent_color}\selectfont}
-\newcommand{\keywordsfont}{\normalfont\sffamily\linespread{1}\fontsize{8.9}{11}\selectfont}
-\newcommand{\keywordheadfont}{\normalfont\sffamily\fontsize{7.8}{9}\selectfont\bfseries}
+% \newcommand{\keywordsfont}{\normalfont\sffamily\linespread{1}\fontsize{8.9}{11}\selectfont}
+% \newcommand{\keywordheadfont}{\normalfont\sffamily\fontsize{7.8}{9}\selectfont\bfseries}
 \newcommand{\copyrightfont}{\normalfont\sffamily\fontsize{8}{9}\selectfont}
 
 % texttt mod for code
@@ -356,10 +366,10 @@ urlcolor=hypercolor}
 \newcommand{\runningauthor}[1]{\def\@runningauthor{#1}}
 %% Backward compatibility
 \newcommand{\correspondingauthor}[1]{\runningauthor{#1}}
-\newcommand{\keywords}[1]{\def\@keywords{#1}}
+% \newcommand{\keywords}[1]{\def\@keywords{#1}}
 \newcommand{\runningtitle}[1]{\def\@runningtitle{#1}}
 
-\newcommand{\keywordname}{{\keywordheadfont Keywords:}} % Defines the keywords heading name
+% \newcommand{\keywordname}{{\keywordheadfont Keywords:}} % Defines the keywords heading name
 
 % Colored margin box
 %\newcommand{\marginmark}{
@@ -404,7 +414,7 @@ THE ABSTRACT\vskip12pt}\let\go\relax\fi
 \parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
  %% v1.8: turn on line numbers
 \ifthenelse{\boolean{displaylineno}}{\internallinenumbers}{}%
-{\keywordsfont\keywordname}\hspace*{0.1em} \keywordsfont \@keywords%
+% {\keywordsfont\keywordname}\hspace*{0.1em} \keywordsfont \@keywords%
 }%
 }%
 }%
