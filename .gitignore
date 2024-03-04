@@ -52,3 +52,4 @@
 .mtc
 build/
 thesis.synctex(busy)
+.vscode/ltex.dictionary.en-GB.txt
