@@ -19,7 +19,7 @@
 \setstretch{1.15} % body line space
 %\renewcommand{\familydefault}{\sfdefault} % sans serif for review
 
-\runningauthor{Merino Recalde \textit{et al}., 2023 }
+\runningauthor{Merino Recalde \textit{et al}., 2024 }
 \runningtitle{The demographic drivers of cultural evolution in bird song}
 
 \begin{document}
@@ -264,7 +264,7 @@ In this paper we use simple descriptions of cultural diversity, uniqueness, and 
     \item We calculated the rate of song cultural turnover as the proportion of unique song types in a given year that were not already present in the same neighbourhood the preceding year.
 \end{itemize}
 
-In this way, 'diversity' describes the relative proportion of unique songs in a neighbourhood, and 'uniqueness' refers to how uncommon, on average, the songs of the birds in a neighbourhood are. These two ways of characterizing cultural diversity are (as expected) anti-correlated in our study site due to the effect of sampling: more frequent songs are sampled more readily, causing larger sample sizes---neighbourhoods with more density and therefore songs---to yield lower average estimates of diversity and higher average estimates of uniqueness, in a nonlinear manner. Once this is adjusted for, diversity and uniqueness are positively correlated, as expected (see \autoref{fig:supp_song_sampling}; models $nov_{m_2}$ and $nov_{m_{2.1}}$; spatial distribution of these variables in \autoref{fig:supp_cultural_variables}). All the relevant models adjust for these effects of neighbourhood density and sampling.
+In this way, 'diversity' describes the relative proportion of unique songs in a neighbourhood, and 'uniqueness' refers to how uncommon, on average, the songs of the birds in a neighbourhood are. These two ways of characterizing cultural diversity are (as expected) anti-correlated in our study site due to the effect of sampling: more frequent songs are sampled more readily, causing larger sample sizes---neighbourhoods with more density and therefore songs---to yield lower average estimates of diversity and higher average estimates of uniqueness, in a nonlinear manner. Once this is adjusted for, which we do by including  a GAM term capturing the nonlinear effect of the sample size, diversity and uniqueness are positively correlated, as expected (see \autoref{fig:supp_song_sampling}; models $nov_{m_2}$ and $nov_{m_{2.1}}$; spatial distribution of these variables in \autoref{fig:supp_cultural_variables}). All the relevant models adjust for these effects of neighbourhood density and sampling.
 
 \paragraph{Models}
 
