@@ -41,8 +41,9 @@
 
 \correspondingauthoraffiliation[$\ast$]{Corresponding author: \href{mailto:nilo.recalde@biology.ox.ac.uk}{nilo.recalde@biology.ox.ac.uk}}
 
+
 \begin{abstract}
-Social learning within communities can lead to shared behavioural patterns that persist over time, which we know as culture. Examples of culture include bird and whale songs, cetacean feeding techniques, and avian and mammalian migratory routes. Shaped by neutral and selective forces, animal cultures evolve dynamically and form cultural traditions that vary greatly in their diversity and stability. These cultural traits can influence individual and group survival, population structure, and even inform conservation efforts, underscoring the importance of understanding how population processes interact with social learning to shape culture. Although the impact of social learning mechanisms and biases has been extensively explored, the role of demographic factors---such as population turnover, immigration, and age structure---on cultural evolution has received theoretical attention but rarely been subject to empirical investigation in natural populations. Doing so requires very complete trait sampling and detailed individual life history data, which are hard to acquire in combination. To this end, we compiled a multi-generational data set containing over 109,000 songs from >400 repertoires in a population of great tits (\textit{Parus major}), trained a deep metric learning model to re-identify individuals and quantify song similarity, and fit spatially explicit regression models of cultural diversity and turnover at the individual and neighbourhood scales. We show that demographic variation within the small spatial scales at which learning takes place has the potential to impact the diversity and pace of change of animal vocal cultures. In particular, longer natal dispersal distances within the population reduce cultural diversity and uniqueness, while immigrant birds seem to acquire local song types rather than introducing new ones, but tend to have larger repertoires and so increase the absolute diversity of neighbourhoods. Birds of the same age tend to have more similar repertoires, and neighbourhoods comprising a mix of ages tend to have more cultural diversity. Individual turnover is the primary driver of cultural change. However, several factors slow this change: dispersal, a higher proportion of immigrant birds, and an older population. Our analyses support theoretical expectations regarding a key role of demographic processes in cultural evolution, while highlighting their interaction with species-specific factors such as the timing of song acquisition.
+Social learning can give rise to shared behavioural patterns that persist as culture within animal communities \autocite{viciana2021, whiten2019}, such as bird and whale songs and cetacean feeding techniques \autocite{aplin2019, allen2013, garland2020}. These cultural traits evolve \autocite{potvin2015, williams2021,ju2019,riebel2015} and can impact individual survival, population structure, and conservation efforts \autocite{brakes2019}. Although theoretical work indicates that demographic processes---like population turnover, immigration, and age structure---significantly influence cultural evolution \autocite{deffner2022a, hudson2022, kandler2023}, empirical evidence from natural populations is limited. Using deep metric learning to analyze over 100,000 songs from >400 repertoires in great tits (\textit{Parus major}), we show that demographic variation affects vocal cultures within the small spatial and temporal scales where learning occurs. Within-population dispersal homogenises song culture; immigrant birds adopt local songs while increasing neighbourhood diversity through larger repertoires. Birds of similar age tend to have more similar repertoires, which provides evidence of cultural change, with mixed-age neighbourhoods showing higher cultural diversity. We estimate that individual turnover is a main driver of cultural change, and that its pace is also moderated by dispersal, immigration, and population age structure. These findings support theoretical expectations regarding a key role of demographic processes in cultural evolution, while highlighting their interaction with species-specific factors such as the timing and mode of song acquisition.
 \end{abstract}
 
 \maketitle
@@ -50,14 +51,11 @@ Social learning within communities can lead to shared behavioural patterns that 
 
 \section{Results and Discussion}
 
-\lettrine[lines=2]Some behavioural traits are shared and persist within communities due to social learning \autocite{viciana2021}. We refer to these behaviours as 'animal culture', exemplified by tool use in capuchin monkeys \autocite{falotico2019}, the learned songs of oscine birds \autocite{aplin2017, riebel2015, williams2021}, migration routes \autocite{jesmer2018, berdahl2018, byholm2022}, and the feeding techniques of some cetaceans \autocite{allen2013, rendell2001}. Animal cultures are not static: neutral and selective mechanisms influence the frequency of cultural traits \autocite{potvin2015, williams2021}, leading to a process of cultural evolution. The resulting cultural traditions differ considerably in their diversity and stability \autocite{tchernichovski2017}, determined by both learning biases and mechanisms and the demographic structure of populations \autocite{deffner2022a, kandler2017}. 
-
-While the role of social learning strategies and biases---frequency dependence, tutor biases, etc.---has been extensively studied \autocite{pike2010, kendal2015, aplin2017, lachlan2018, tchernichovski2021}, there exists a substantial gap in our understanding of how demography contributes to the emergence and persistence of distinct cultural traits within wild populations. Processes such as the recruitment of juveniles, immigration, emigration, mortality, and variation in age structure are likely to strongly affect an individual's opportunities for learning and exposure to different cultural variants, which has been amply emphasized by theoretical work \autocite{deffner2022a, deffner2022, kandler2023, fogarty2019, deffner2020, derex2016, kirby2021, nunn2009, barta2023, dyble2024, chimento2024}. However, translating theoretical expectations into empirical evidence remains a challenge (see \autocite{chimento2021, fayet2014, payne1993} for exceptions).
-
+Culture is increasingly recognized as both a fundamental aspect of many animals' lives and a valuable tool in monitoring and conservation efforts \autocite{laiolo2007, brakes2021, jesmer2018}. Cultural traits play a role in the survival and reproduction of individuals and social groups; they reflect or even shape the structure of the population \autocite{brakes2019, garland2015}, and can be lost when habitat fragmentation and population decline lead to reduced learning opportunities \autocite{paxton2019, crates2021}. Neutral and selective mechanisms drive cultural evolution \autocite{potvin2015, williams2021, williams2013, youngblood2022, williams2022}, resulting in 'traditions' that differ considerably in their diversity and stability \autocite{tchernichovski2017}. While the effects of social learning strategies---such as frequency dependence and tutor biases---on the diversity and stability of cultures are well-documented \autocite{pike2010, kendal2015, aplin2017, lachlan2018, tchernichovski2021}, our understanding of how demography affects cultural traits within wild populations is less well developed. Processes such as the recruitment of juveniles, immigration, emigration, mortality, and variation in age structure are likely to strongly affect an individual's opportunities for learning and exposure to different cultural variants, as it has been amply emphasized by theoretical work \autocite{deffner2022a, deffner2022, kandler2017, kandler2023, fogarty2019, deffner2020, derex2016, derex2018, kirby2021, nunn2009, barta2023, dyble2024, chimento2024}. However, translating theoretical expectations into empirical evidence remains a challenge (see \autocite{chimento2021, fayet2014, payne1993, graham2017, laiolo2008} for exceptions). A comprehensive understanding of cultural dynamics in the wild requires examining both intrinsic factors---social, cultural, and cognitive, which have received greater attention---and extrinsic, ecological and demographic processes. This includes identifying the spatial and temporal scales at which these processes operate and evaluating their relative significance within natural populations.
 
 \begin{figure*}[!ht]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/FIG1.pdf}
+    \includegraphics[width=\linewidth]{FIG1.pdf}
     \mycaption{Study system and main variables in our analysis}{
         (A) Cultural variables measured at the neighbourhood level. Higher values of cultural diversity indicate that there are more distinct song types in the neighbourhood relative to the total song output. Higher cultural uniqueness indicates that the songs in the neighbourhood are on average less common in the population, and higher cultural turnover indicates that the neighbourhood's song repertoire has changed more from one year to the next. See \hyperref[sc:op-definitions]{definitions} for full definitions.
 
@@ -70,14 +68,12 @@ While the role of social learning strategies and biases---frequency dependence, 
     \label{c4_fig:main}
 \end{figure*}
 
-Culture is increasingly recognized as both a fundamental aspect of many animals' lives and a valuable tool in monitoring and conservation efforts \autocite{brakes2019, brakes2021}. Cultural traits play a role in the survival and reproduction of individuals and social groups; they reflect or even shape the structure of the population \autocite{brakes2019}, and can be lost when habitat fragmentation and population decline lead to reduced learning opportunities \autocite{paxton2019, crates2021}. A comprehensive understanding of cultural change and loss, then, requires that we have the ability to detect and study not just intrinsic factors---social, cultural, cognitive---but also extrinsic, ecological and demographic processes. This entails identifying the relevant spatial and temporal scales at which these processes manifest within natural populations, as well as their relative importance. 
-
-To contribute to this goal, we built a comprehensive data set that spans three years and documents the dawn songs produced by male great tit birds during 454 breeding attempts in a single population located in Wytham Woods, UK. The population's marked variation in individual turnover, postnatal dispersal distances, age structure, and immigration across space---known through ongoing long-term monitoring \autocite{lack1964}---allowed us to estimate their effects on song cultural repertoires at both individual and group levels. First, we assigned more than 109,000 songs in 330 song repertoires to 242 individual birds through a combination of direct physical capture, radio frequency identification microchips, and a novel song-based re-identification method using a deep metric learning model. Then, we quantified individual and group-level traits and analysed variation in song cultural similarity, diversity, and turnover (see \hyperref[sc:group-properties]{definitions}) using network and spatially explicit Bayesian multilevel regression models. See \autoref{c4_fig:main} for a visual abstract of the study.
+To contribute to this goal, we built a comprehensive data set that spans three years and documents the dawn songs produced by male great tit birds during 454 breeding attempts in a single population located in Wytham Woods, UK. The population's marked variation in individual turnover, postnatal dispersal distances, age structure, and immigration across space---known through ongoing long-term monitoring \autocite{lack1964}---allowed us to estimate their effects on song cultural repertoires at individual and group levels. First, we assigned more than 109,000 songs in 330 song repertoires to 242 individual birds through direct physical capture, radio frequency identification microchips, and a novel song-based re-identification method that uses a deep metric learning model. Then, we quantified individual and group-level traits and analysed variation in song cultural similarity, diversity, and turnover (see \hyperref[sc:group-properties]{definitions}) using network and spatially explicit Bayesian multilevel regression models. See \autoref{c4_fig:main} for a visual abstract of the study.
 
 
 \begin{figure*}[!hbt]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/FIG3.pdf}
+    \includegraphics[width=\linewidth]{FIG3.pdf}
     \mycaption{Influence of demographic variables on cultural diversity and uniqueness within neighbourhoods}{
         (A) Marginal effects at the mean of neighbourhood characteristics including mean dispersal distance, proportion of immigrant birds, average age, and individual turnover. See \hyperref[sc:group-properties]{methods} for full definitions.
         (B) Adjusted predictions and partial residuals of the effect of mean neighbourhood dispersal distance on cultural uniqueness. Low-dispersal neighbourhoods are those in which birds hatched in the same area.
@@ -87,17 +83,17 @@ To contribute to this goal, we built a comprehensive data set that spans three y
     \label{c4_fig:diversity}
 \end{figure*}
 
-Our results reveal an interplay of demographics and song cultural dynamics that, albeit complex, largely matches theoretical expectations, as discussed below. This work also demonstrates that bird song, which already provides what is perhaps the largest body of evidence for cultural change in animals \autocite{laland2006}, also has the potential to help us shed light on the impact of other population processes on animal cultures, owing to the fact that we can sample individual song repertoires with relative ease.
+Our results reveal an interplay of demographics and song cultural dynamics that, albeit complex, largely matches theoretical expectations. This work also demonstrates that bird song, which already provides what is perhaps the largest body of evidence for cultural change in animals \autocite{laland2006}, also has the potential to help us shed light on the impact of other population processes on animal cultures, owing to the fact that we can sample individual song repertoires with relative ease.
 
 \subsection{Reduced dispersal, higher immigration and and age associated with higher cultural diversity}
 
 Population genetics provides robust evidence supporting the notion that high dispersal rates facilitate gene flow, which, in turn, reduces the efficacy of selection and diversification. Conversely, low dispersal facilitates genetic differentiation through mechanisms such as mutation and drift, leading to allopatric population divergence \autocite{suarez2022, claramunt2011, papadopoulou2009}. Were we to adhere to an analogy from genetics to culture, we would anticipate that reduced dispersal rates will decelerate the diffusion of cultural traits \autocite{nunn2009}. This, in turn, should result in the maintenance of distinct behavioural patterns within populations if learning is somewhat accurate, leading to a greater number of cultural variants unique to a neighbourhood or region \autocite{whitehead2012, planque2014}. Our analysis indeed indicates that neighbourhoods (see \hyperref{sc:group-properties}{definitions} where more birds have remained in proximity to their natal areas harbour greater and more unique cultural diversity (\textit{diversity:} $P(\beta_{disp (\overline{m})} < 0 | D) = 1,~ mem = -0.018,~CI_{95\%}~[-0.023, -0.012]$; \textit{uniqueness:} $P(\beta_{disp (\overline{m})} < 0 | D) = 0.96,~ mem = -0.005,~CI_{95\%}~[-0.01, 0]$; \figref[a\&b]{c4_fig:diversity}, \autoref{table:model_estimates}; see \autoref{sc:group-properties}), in line with prior research at a much coarser grain \autocite{fayet2014}. 
 
-The analogy breaks down as soon as we consider the underlying individual-level mechanisms, however, due to complex interactions between the timing of dispersal and learning mechanisms that are specific to the cultural domain. Some species only learn songs from their parents and early in life, in a manner reminiscent of genetic inheritance, while others learn continuously from their neighbours, or only after dispersal (see \autocite{searcy2021} for an overview of different strategies). In the case of our study species, the great tit, these learning mechanisms are thought to involve selective retention or modification of songs encountered early in life, while they disperse, and up until before they begin breeding for the first time---a process that results in crystallized repertoires of 1 to $\simeq$ 10 different song types \autocite{mcgregor1982b,rivera-gutierrez2011,merinorecalde2023a}. In our individual-level analysis, we see that birds that dispersed over longer distances tend to have learned repertoires composed of songs that are more common within the population (\textit{uniqueness:} $P(\beta_{disp (m)} < 0 | D) = 1,~mem = -0.2,~CI_{95\%}~[-0.3, -0.09]$; \figref[b]{c4_fig:individual}, \autoref{table:model_estimates}), and possibly smaller repertoires as well (\textit{rep.size:} $P(\beta_{disp (m)} < 0 | D) = 0.91,~mem = -0.2,~CI_{95\%}~[-0.44, 0.05]$; \figref[b]{c4_fig:individual}; \autoref{table:model_estimates}). We hypothesize that birds with more extensive movements are more likely to sample and acquire a larger proportion of common cultural variants, simply because they are exposed to more songs across their learning period. This finds support in a spatially explicit simulation of song learning with dispersal, which shows this pattern would emerge under positively frequency-dependent learning or a process leading to similar acquisition curves (see \autoref{fig:supp_dispersal_simulation}; note that we do not currently know which learning strategies are employed by great tits).
+The analogy breaks down as soon as we consider the underlying individual-level mechanisms, however, due to complex interactions between the timing of dispersal and learning mechanisms that are specific to the cultural domain. Some species only learn songs from their parents and early in life, in a manner reminiscent of genetic inheritance, while others learn continuously from their neighbours, or only after dispersal (see \autocite{searcy2021} for an overview of different strategies). In the case of our study species, the great tit, these learning mechanisms are thought to involve selective retention or modification of songs encountered early in life, while they disperse, and up until before they begin breeding for the first time---a process that results in crystallized repertoires of 1 to $\simeq$ 10 different song types \autocite{mcgregor1982b,rivera-gutierrez2011,merinorecalde2024}. In our individual-level analysis, we see that birds that dispersed over longer distances tend to have learned repertoires composed of songs that are more common within the population (\textit{uniqueness:} $P(\beta_{disp (m)} < 0 | D) = 1,~mem = -0.2,~CI_{95\%}~[-0.3, -0.09]$; \figref[b]{c4_fig:individual}, \autoref{table:model_estimates}), and possibly smaller repertoires as well (\textit{rep.size:} $P(\beta_{disp (m)} < 0 | D) = 0.91,~mem = -0.2,~CI_{95\%}~[-0.44, 0.05]$; \figref[b]{c4_fig:individual}; \autoref{table:model_estimates}). We hypothesize that birds with more extensive movements are more likely to sample and acquire a larger proportion of common cultural variants, simply because they are exposed to more songs across their learning period. This finds support in a spatially explicit simulation of song learning with dispersal, which shows this pattern would emerge under positive frequency-dependent learning or a process leading to similar acquisition curves (see \autoref{fig:supp_dispersal_simulation}; note that we do not currently know which learning strategies are employed by great tits).
 
 \begin{figure*}[!t]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/FIG2.pdf}
+    \includegraphics[width=\linewidth]{FIG2.pdf}
     \mycaption{Individual and dyadic analysis of cultural diversity and similarity}{
         (A) Illustrative example showing the repertoires of two different birds in the population, with three songs in each, one of which is shared. Each sub-panel shows a cartoon spectrogram, with time in the horizontal axis and frequency in the vertical. Units not shown.
         (B) Marginal effects of dispersal, immigration status, and age on individual song repertoires, described in terms of their absolute size (the total number of distinct song types sung by that bird) and their uniqueness (how rare, on average, the songs types are in the population within that year).
@@ -110,7 +106,7 @@ Building on our understanding of cultural dynamics in relation to dispersal we e
 
 Indeed, in our population, we find no evidence that the repertoires of birds originating from outside the population significantly differ acoustically from those of resident birds ($mem = -0.002,~CI_{95\%}~[-0.006, 0.002]$; \figref[c]{c4_fig:individual}). This, in conjunction with the observation that song repertoire similarity between individuals is predicted by the distance between breeding territories ($mem = -0.005,~CI_{95\%}~[-0.006, -0.004]$; \figref[c]{c4_fig:individual}; \autoref{table:model_estimates}), supports the hypothesis that great tits are critical period learners that learn primarily from territorial neighbours after dispersal \autocite{mcgregor1982b, rivera-gutierrez2011}.
 
-However, immigrant birds, while not acoustically distinct, tend to have larger repertoires compared to their resident counterparts (\figref[b]{c4_fig:individual}; $P(\beta_{\overline{imm}.} > 0 | D) = 0.87,~mem=0.24,~CI_{95\%}~[-0.098, 0.593]$; \autoref{table:model_estimates}). At the group level, this small and uncertain effect amplifies, such that neighbourhoods with a higher proportion of immigrant birds do not have increased cultural diversity relative to the total number of songs ($mem=~0.002,$ $~CI_{95\%}~[-0.004, 0.007]$; \figref[a]{c4_fig:diversity}); but they do have a higher absolute cultural diversity---above what would be expected based solely on the number of birds ($P(\beta_{\overline{imm}.} > 0 | D) = 0.98,~mem=0.47,~CI_{95\%}~[0.1, 0.84]$; \autoref{fig:supp_absolute_cultural_diversity}, \autoref{table:model_estimates}). 
+However, immigrant birds, while not acoustically distinct, tend to have larger repertoires compared to their resident counterparts (\figref[b]{c4_fig:individual}; $P(\beta_{\overline{imm}.} > 0 | D) = 0.87,~mem=0.24,~CI_{95\%}~[-0.098, 0.593]$; \autoref{table:model_estimates}). At the group level, this small and uncertain effect amplifies, such that neighbourhoods with a higher proportion of immigrant birds do not have increased cultural diversity relative to the total number of songs ($mem=~0.002,$ $~CI_{95\%}~[-0.004, 0.007]$; \figref[a]{c4_fig:diversity}) but do have higher absolute cultural diversity---above what would be expected based solely on the number of birds ($P(\beta_{\overline{imm}.} > 0 | D) = 0.98,~mem=0.47,~CI_{95\%}~[0.1, 0.84]$; \autoref{fig:supp_absolute_cultural_diversity}, \autoref{table:model_estimates}). 
 
 Previous research \autocite{verhulst1997}  has revealed that most birds arriving from outside the population disperse over two kilometres, significantly farther than the typical distances observed within the population (median for males = 558 metres \autocite{greenwood1979}). This extended dispersal may have qualitative consequences for cultural diversity, through a combination of factors: first, an initial exposure to songs from the source population; then, a heightened pressure to adopt vocalisations similar to those of territorial neighbours to avoid any social or reproductive costs associated with non-local signals, as seen in other species \autocite{payne1983, baker1981, mortega2014, lachlan2014, beecher2008}.
 
@@ -118,7 +114,7 @@ Finally, we find that individual turnover does not significantly affect cultural
 
 \begin{figure*}[!htb]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/FIG4.pdf}
+    \includegraphics[width=\linewidth]{FIG4.pdf}
     \mycaption{Influence of demographic variables on cultural turnover within neighbourhoods}{
         (A) Marginal effect at the means for mean dispersal distance, proportion of immigrant birds, average age, and individual turnover on the rate of cultural turnover within neighbourhoods
         (B and C) Adjusted predictions and partial residuals of the effects of the proportion of individual turnover on cultural turnover (B) and the effect of mean neighbourhood age on cultural turnover within neighbourhoods (C).
@@ -143,41 +139,98 @@ Cultural traits, learnt bird song in this case, are shaped by many factors: some
 
 Our study explores how demographic processes influence cultural diversity and the pace of cultural change on small spatial and temporal scales. We show that these factors can significantly shape cultural dynamics within a wild bird population, though their effect on long-term cultural diversification and stability remains uncertain. Both empirical studies and modeling efforts on cultural dynamics should consider the population's demographic characteristics and their variability across time and space, as these factors determine individuals' exposure to cultural variants and learning opportunities, ultimately affecting emergent group-level cultural dynamics.
 
-\section{Methods}
-\label{sc:methods}
 
-\subsection{Resource availability}
+\section{Resource availability}
 
-The complete Wytham great tit song data set is available in \href{https://osf.io/n8ac9}{osf.io/n8ac9}, and documented \href{https://nilomr.github.io/great-tit-hits/}{here}. The main repository with code and data to reproduce the analysis and figures in this article can be found at \href{http://github.com/nilomr/birdsong-demography}{birdsong-demography}.
+\subsection{Lead contact}
+Requests for further information and resources should be directed to the lead contact, Nilo Merino Recalde (\href{mailto:nilo.recalde@biology.ox.ac.uk}{nilo.recalde@biology.ox.ac.uk}).
 
-\subsection{Data collection}
+\subsection{Materials availability}
+This study did not generate new unique reagents.
 
-\subsubsection{Study system and fieldwork}
+\subsection{Data and code availability}
+The complete Wytham great tit song data set is available at \href{https://osf.io/n8ac9}{osf.io/n8ac9} \autocite{nilo_gretidataset_osf_2023}, and documented at \href{https://nilomr.github.io/great-tit-hits/}{nilomr.github.io/great-tit-hits}. The main repository with code and data to reproduce the analysis and figures in this article can be found at \href{http://github.com/nilomr/birdsong-demography}{github.com/nilomr/birdsong-demography}, deposited at \href{https://zenodo.org/records/12800736}{10.5281/zenodo.12800735} \autocite{merino_recalde_2024_songdemo_code}.
 
-Great tits are small, short-lived birds---average lifespan: 1.9 years---that sing acoustically simple yet highly diverse songs. Each male great tit has a repertoire of one to over 10 song types, also referred to as syllable types, which are repeated multiple times in short bursts separated by longer periods of silence. Although detailed studies on how individual great tits learn their songs are limited, existing evidence suggests several key points. First, it appears that great tits do not learn their song repertoires from their fathers \autocite{mcgregor1982b}. Instead, their song development is influenced by the songs they encounter during their early life until they establish a territory and breed for the first time. We do not currently know how precisely great tits learn songs, or how social interactions affect the process. At 10-11 months of age, before their first breeding season begins, vocal learning culminates in a final crystallised song repertoire that remains relatively stable afterward \autocite{rivera-gutierrez2011}---a process known as critical period learning \autocite{nottebohm1999, thorpe1958a}. Additionally, while there is evidence that birds can continue to learn to recognize new songs later in life (that is, learning for  discrimination, as opposed to learning for production), this ability seems to be limited compared to their early learning experiences \autocite{mcgregor1986}. Furthermore, females are able to individually recognize males based on their songs \autocite{lind1996} and, even across a large population, individual song renditions can accurately indicate the identity of the bird producing them \autocite{merinorecalde2023a}.
+\section{Acknowledgements}
+
+We thank all those who have contributed to the long-term nest box study in Wytham Woods and the collection of associated data. We also thank three anonymous reviewers for their constructive feedback. This work was supported by a Clarendon-Mary Frances Wagley Graduate Scholarship and an EGI scholarship to Nilo Merino Recalde, and made use of the University of Oxford Advanced Research Computing facility \autocite{richards2015}.
+
+\section{Author contributions}
+\textbf{Nilo Merino Recalde}: Conceptualization, Methodology, Software, Formal analysis, Investigation, Data Curation, Writing - Original Draft, Writing - Review \& Editing, Visualization. 
+\textbf{Andrea Estandía}: Investigation, Data Curation, Writing - Review \& Editing.
+\textbf{Sara C. Keen}: Writing -- Review \& Editing.
+\textbf{Ella F. Cole}: Supervision, Project Administration.
+\textbf{Ben C. Sheldon}: Supervision, Project Administration, Writing -- Review \& Editing, Funding Acquisition.
+
+\section{Declaration of interests}
+The authors declare no competing interests.
+
+\section{STAR\texorpdfstring{$\bigstar$}{*}Methods}
+
+\section{Key resources table}
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\tabcolsep}{6pt}
+    \begin{tblr}{
+        colspec={lXX},
+        row{1} = {white},
+        row{3,5,7,10} = {gray!10},
+        hline{1,2,3,4,5,6,7,8,9,10,11,Z} = {0.5pt}
+    }
+        \textbf{REAGENT or RESOURCE} & \textbf{SOURCE} & \textbf{IDENTIFIER} \\
+        \textbf{Deposited data} & & \\
+        Wytham great tit song dataset & \autocite{nilo_gretidataset_osf_2023, nilo} & \href{https://osf.io/n8ac9}{osf.io/n8ac9} \\
+        \textbf{Experimental models: Organisms/strains} & & \\
+        Great tit (\textit{Parus major}) & Wild population at Wytham Woods, Oxford, UK & N/A \\
+        \textbf{Software and Algorithms} & & \\
+        Analysis code and data & This paper and \autocite{merino_recalde_2024_songdemo_code} & \href{https://github.com/nilomr/birdsong-demography}{github.com/nilomr/birdsong-demography} \\
+        pykanto & \autocite{merinorecalde2023} & \href{https://github.com/nilomr/pykanto}{github.com/nilomr/pykanto} \\
+        \textbf{Other} & & \\
+        AudioMoth recorders & \autocite{hill2019} & \href{https://www.openacousticdevices.info}{openacousticdevices.info}
+    \end{tblr}
+\end{table}
+
+\section{Experimental model and study participant details}
+
+Great tits are small, short-lived birds---average lifespan: 1.9 years---that sing acoustically simple yet highly diverse songs. Each male great tit has a repertoire of one to over 10 song types, also referred to as syllable types, which are repeated multiple times in short bursts separated by longer periods of silence. Although detailed studies on how individual great tits learn their songs are limited, existing evidence suggests several key points. First, it appears that great tits do not learn their song repertoires from their fathers \autocite{mcgregor1982b}. Instead, their song development is influenced by the songs they encounter during their early life until they establish a territory and breed for the first time. We do not currently know how precisely great tits learn songs, or how social interactions affect the process. At 10-11 months of age, before their first breeding season begins, vocal learning culminates in a final crystallised song repertoire that remains relatively stable afterward \autocite{rivera-gutierrez2011}---a process known as critical period learning \autocite{nottebohm1999, thorpe1958a}. Additionally, while there is evidence that birds can continue to learn to recognize new songs later in life (that is, learning for  discrimination, as opposed to learning for production), this ability seems to be limited compared to their early learning experiences \autocite{mcgregor1986}. Females are able to individually recognize males based on their songs \autocite{lind1996} and, even across a large population, individual song renditions can accurately indicate the identity of the bird producing them \autocite{merinorecalde2023, merinorecalde2024}.
 
 During the breeding season, from March to June, great tit pairs are socially monogamous and defend territories around their nests \autocite{hinde1952}. In Wytham Woods, Oxfordshire, UK (51\degree46 N, 1\degree20 W), a population of these birds has been the focus of a long-term study since 1947 \autocite{lack1964}. Wytham Woods is a semi-natural, predominantly deciduous and partly discontinuous woodland that spans an area of approximately 385 hectares and is surrounded by farmland. Most great tits in this population breed in nest boxes with known locations, and the majority of individuals are marked with a unique British Trust for Ornithology (BTO) metal leg ring as either nestlings or adults. The birds were not provided with supplementary sources of food during the study.
 
-We collected data from late March to mid-May during the 2020, 2021, and 2022 breeding seasons. Every year, fieldworkers checked each of the 1018 nest boxes at least once a week before and during the egg-laying period, which typically lasts from one to 14 days \autocite{Perrins1965}, and recorded the identities of breeding males and females, the dates of clutch initiation and egg hatching, clutch size, and fledgling number and condition under standardized protocols. We found the first egg date by assuming that one egg is laid every day and counting back the number of eggs present on the day of observation. In cases where we did not observe the chicks on their day of hatching, the hatching date was determined by assessing the weight of the heaviest chicks and extrapolating their age from established growth curves \autocite{cresswell2003, gibb1950}.
-
-Nest box occupancy and breeding density vary across the study area, with some areas having a higher density of nest boxes and a higher proportion of occupied boxes, which we account for in some of our analyses as described in the sections below. In the years of our study,  261, 289 and 278 nest boxes were occupied by pairs of great tits, with 173, 184 and 184 that led to successful breeding attempts where at least one chick fledged. See \autoref{fig:supp_study_site} for a map of the study site and sampling locations.
-
-To record the vocalisations of male great tits we took advantage of their behaviour during the reproductive period, when they engage in continuous singing near their nests at dawn before and during egg laying \autocite{mace1987}. Collectively, this vocal display is referred to as the dawn chorus, and has been demonstrated to yield a reliable estimation of the song repertoire of individuals when recorded in full \autocite{rivera-gutierrez2012, vanduyse2005}. As soon as we suspected that a pair of great tits were using a nest box---based on nest lining materials, egg size if present, or other signs of activity---we deployed an autonomous sound recorder nearby. The microphone faced upwards and slightly away from the nest box, aligning with the nest box entrance hole's direction. The birds sang near the recorder: although we did not gather data on the singer's location, our anecdotal observations were in line with a different population where the average distance to the nest box while singing was 10 metres \autocite{halfwerk2012}. 
-
-This approach is supported by previous studies on great tit dawn song \autocite{keen2020, naguib2019,snijders2015, boucaud2016, boucaud2016a}, as well as our observations that: (a) recordings from consecutive days contain renditions of the same song types clearly sung by a single individual cycling through its repertoire, (b) performances of the same song types across different days can be assigned to a single individual by our deep metric learning model (see \hyperref[sc:song-similarity]{deep metric learning model training}), and (c) when we recapture the same bird in a different field season (often in the same location due to high adult site fidelity), we can easily match its songs to the ones on record, which would not happen if we were misattributing songs to individuals. To further ensure that we were recording the correct birds, we discarded recordings with more than one vocalizing bird unless one was distinctly louder than the others during the segmentation process. Additionally, we excluded all songs with a maximum amplitude below $-16$ dB, calculated as $20\log_{10}\left(\frac{A}{A_0}\right)$, with $A=5000$ and $A_0=32767$ (the maximum value for 16-bit digital audio). This threshold was established based on observations showing that an amplitude cutoff greater than 4000 unambiguously differentiated the focal bird from its closest neighbours when simultaneous recordings from nearby spatial locations captured multiple birds. It is important to note that these values are not calibrated and are relative to our recording equipment and settings, as well as other factors like sound directionality and vegetation cover. Although variation in sound amplitude due to distance and direction of the singer could affect which songs were recorded clearly enough to analyse, we did not observe any systematic bias that might have resulted in low signal-to-noise ratios causing exclusion of song types.
-
-Our recording efforts captured song repertoires from birds belonging to approximately half of all breeding attempts \autoref{fig:supp_neighbourhood_sampling}, including both successful and unsuccessful attempts, as well as individuals with and without linked data. This song sampling density, while high for this kind of field study, could theoretically result in some rare song types being undersampled---particularly if rare song types are primarily sung by unsuccessful or late-breeding individuals---but we have no evidence suggesting that this is the case. A related potential issue is that birds that sing more frequently might be more likely to be recorded, but as these individuals are also the primary contributors to the local song pool due to their higher song output, we are confident that our data provides a representative sample of the song repertoire of the breeding population in each area. Importantly, the birds that we recorded are representative of the neighbourhood's composition in terms of breeding density, dispersal distances, contribution of immigration, and age distribution (see  \autoref{fig:supp_neighbourhood_sampling}).
- 
-For this study, we calculated postnatal dispersal distance as the straight line distance from the natal site to the breeding site. The dispersal distances of birds classed as immigrants (not ringed as chicks in the population) are not known, but most are thought to come from other populations at least 1 km, and likely more than 2.5 km, away \autocite{verhulst1997, quinn2011}. We determined age based on the year of hatching for birds hatched in the population and using plumage characteristics for immigrants, which are most often caught as yearlings (76\%)---allowing us to age them accurately \autocite{woodman2023}.
-
 All work involving birds was subject to review by the University of Oxford, Department of Zoology, Animal Welfare and Ethical Review Board (approval number: APA/1/5/ZOO/NASPA/ Sheldon/TitBreedingEcology). Data collection adhered to local guidelines for the use of animals in research and all birds were caught, tagged, and ringed by BTO licence holders (NMR's licence: C/6904).
 
-\subsubsection{Recording equipment and schedule}
-We used 60 (30 in 2020) AudioMoth automated recorders \autocite{hill2019}, which were housed in custom-built waterproof enclosures. Recording began approximately one hour before sunrise (05:36 -- 04:00 UTC during the recording period) and consisted of seven consecutive 60-minute-long recordings with a sample rate of 48 kHz and a depth of 16-bit. To sample as many birds as possible, we left each recorder at the same location for at least three consecutive days before moving it to a different nest box. We relocated 20 recorders (10 in 2020) every day throughout the recording period.
+
+\section{Method details}
+\label{sc:methods}
+
+\subsection{Data collection}
+
+\subsubsection{Breeding data monitoring}
+We collected data from late March to mid-May during the 2020, 2021, and 2022 breeding seasons. Every year, fieldworkers checked each of the 1018 nest boxes at least once a week before and during the egg-laying period, which typically lasts from one to 14 days \autocite{Perrins1965}, and recorded the identities of breeding males and females, the dates of clutch initiation and egg hatching, clutch size, and fledgling number and condition under standardized protocols. We found the first egg date by assuming that one egg is laid every day and counting back the number of eggs present on the day of observation. In cases where we did not observe the chicks on their day of hatching, the hatching date was determined by assessing the weight of the heaviest chicks and extrapolating their age from established growth curves \autocite{cresswell2003, gibb1950}.
+
+Nest box occupancy and breeding density vary across the study area, with some areas having a higher density of nest boxes and a higher proportion of occupied boxes, which we account for in some of our analyses as described in the sections below. In the years of our study, 261, 289, and 278 nest boxes were occupied by pairs of great tits, with 173, 184, and 184 that led to successful breeding attempts where at least one chick fledged. See \autoref{fig:supp_study_site} for a map of the study site and sampling locations.
+
+\subsubsection{Song recording protocol}
+
+To record the vocalisations of male great tits, we took advantage of their behaviour during the reproductive period, when they engage in continuous singing near their nests at dawn before and during egg laying \autocite{mace1987}. Collectively, this vocal display is referred to as the dawn chorus, and it has been demonstrated to yield a reliable estimation of the song repertoire of individuals when recorded in full \autocite{rivera-gutierrez2012, vanduyse2005}. As soon as we suspected that a pair of great tits were using a nest box---based on nest lining materials, egg size if present, or other signs of activity---we deployed an autonomous sound recorder nearby.
+
+We used 60 (30 in 2020) AudioMoth automated recorders \autocite{hill2019}, which were housed in custom-built waterproof enclosures. Recording began approximately one hour before sunrise (05:36 -- 04:00 UTC during the recording period) and consisted of seven consecutive 60-minute-long recordings with a sample rate of 48 kHz and a depth of 16-bit. The microphone faced upwards and slightly away from the nest box, aligning with the nest box entrance hole's direction. The birds sang near the recorder: although we did not gather data on the singer's location, our anecdotal observations were in line with a different population where the average distance to the nest box while singing was 10 metres \autocite{halfwerk2012}. To sample as many birds as possible, we left each recorder at the same location for at least three consecutive days before moving it to a different nest box. We relocated 20 recorders (10 in 2020) every day throughout the recording period.
+
+This approach is supported by previous studies on great tit dawn song \autocite{keen2020, naguib2019,snijders2015, boucaud2016, boucaud2016a}, as well as our observations that: (a) recordings from consecutive days contain renditions of the same song types clearly sung by a single individual cycling through its repertoire, (b) performances of the same song types across different days can be assigned to a single individual by our deep metric learning model (see \hyperref[sc:song-similarity]{deep metric learning model training}), and (c) when we recapture the same bird in a different field season (often in the same location due to high adult site fidelity), we can easily match its songs to the ones on record, which would not happen if we were misattributing songs to individuals.
+
+To further ensure that we were recording the correct birds, we discarded recordings with more than one vocalizing bird unless one was distinctly louder than the others during the segmentation process. Additionally, we excluded all songs with a maximum amplitude below $-16$ dB, calculated as $20\log_{10}\left(\frac{A}{A_0}\right)$, with $A=5000$ and $A_0=32767$ (the maximum value for 16-bit digital audio). This threshold was established based on observations showing that an amplitude cutoff greater than 4000 unambiguously differentiated the focal bird from its closest neighbours when simultaneous recordings from nearby spatial locations captured multiple birds. It is important to note that these values are not calibrated and are relative to our recording equipment and settings, as well as other factors like sound directionality and vegetation cover. Although variation in sound amplitude due to distance and direction of the singer could affect which songs were recorded clearly enough to analyse, we did not observe any systematic bias that might have resulted in low signal-to-noise ratios causing exclusion of song types.
+
+\subsubsection{Sampling density and representativeness}
+Our recording efforts captured song repertoires from birds belonging to approximately half of all breeding attempts \autoref{fig:supp_neighbourhood_sampling}, including both successful and unsuccessful attempts, as well as individuals with and without linked data. This song sampling density, while high for this kind of field study, could theoretically result in some rare song types being undersampled---particularly if rare song types are primarily sung by unsuccessful or late-breeding individuals---but we have no evidence suggesting that this is the case. A related potential issue is that birds that sing more frequently might be more likely to be recorded, but as these individuals are also the primary contributors to the local song pool due to their higher song output, we are confident that our data provides a representative sample of the song repertoire of the breeding population in each area. Importantly, the birds that we recorded are representative of the neighbourhood's composition in terms of breeding density, dispersal distances, contribution of immigration, and age distribution (see \autoref{fig:supp_neighbourhood_sampling}).
+
+\subsubsection{Dispersal distance and age determination}
+For this study, we calculated postnatal dispersal distance as the straight-line distance from the natal site to the breeding site. The dispersal distances of birds classed as immigrants (not ringed as chicks in the population) are not known, but most are thought to come from other populations at least 1 km, and likely more than 2.5 km, away \autocite{verhulst1997, quinn2011}. We determined age based on the year of hatching for birds hatched in the population and using plumage characteristics for immigrants, which are most often caught as yearlings (76\%)---allowing us to age them accurately \autocite{woodman2023}.
+
+\section{Quantification and statistical analysis}
 
 \subsection{Data processing and annotation}
 
-We processed and annotated the song recordings, 109,963 in total, from 299 repertoires belonging to 242 known birds, using custom software and scripts written in Python 3 \autocite{vanrossum1995} and the open source package \texttt{pykanto} \autocite{merinorecalde2023}. These are available from \href{https://github.com/nilomr/great-tit-hits-setup}{github.com/nilomr/great-tit-hits-setup} \autocite{nilo_gretidataset_setup_2023}. Our annotated data set and a detailed description of the process can be found in Merino Recalde et al \autocite{merinorecalde2023a}. Below we provide a narrative summary of the subsequent characterisation of song similarity and song types.
+We processed and annotated the song recordings, 109,963 in total, from 299 repertoires belonging to 242 known birds, using custom software and scripts written in Python 3 \autocite{vanrossum1995} and the open source package \texttt{pykanto} \autocite{merinorecalde2023}. These are available from \href{https://github.com/nilomr/great-tit-hits-setup}{github.com/nilomr/great-tit-hits-setup} \autocite{nilo_gretidataset_setup_2023}. Our annotated data set and a detailed description of the process can be found in Merino Recalde et al \autocite{merinorecalde2024}. Below we provide a narrative summary of the subsequent characterisation of song similarity and song types.
 
 \subsection{Characterizing repertoire similarity}
 
@@ -187,7 +240,7 @@ Our analyses require i) a measure of the acoustic similarity between any two bir
 \subsubsection{Continuous similarity (individual-level analyses)}
 \label{sc:song-similarity}
 
-Traditional methods used to compare bird vocalisations include visual inspection of spectrograms and measurement of hand-picked acoustic features. However, these approaches have limitations in dealing with noise and variations in performance, and can be extremely time-consuming. So, instead, we adopted a data-driven approach by training a Vision Transformer (ViT) model for feature extraction in a metric learning task on spectrogram representations of great tit songs. Our goal was to create a similarity space based on inherent variation in the data, using categorical labels of song types sung by individual birds, which we know to be perceptually and behaviourally significant \autocite{lind1996}. Further details, data, and code to reproduce this process are available at \autocite{merinorecalde2023} and \autocite{merinorecalde2023a}; we include a summary here.
+Traditional methods used to compare bird vocalisations include visual inspection of spectrograms and measurement of hand-picked acoustic features. However, these approaches have limitations in dealing with noise and variations in performance, and can be extremely time-consuming. So, instead, we adopted a data-driven approach by training a Vision Transformer (ViT) model for feature extraction in a metric learning task on spectrogram representations of great tit songs. Our goal was to create a similarity space based on inherent variation in the data, using categorical labels of song types sung by individual birds, which we know to be perceptually and behaviourally significant \autocite{lind1996}. Further details, data, and code to reproduce this process are available at \autocite{merinorecalde2023} and \autocite{merinorecalde2024}; we include a summary here.
 
 We optimized model performance using Triplet loss, a loss function that ensures the projection of a positive sample (belonging to the same class as the anchor point) is closer to the anchor's projection than that of a negative sample (belonging to a different class) by a specified margin \autocite{hermans2017, hoffer2018}. During training, we mined hard triplets---where the negative sample is closer to the anchor than the positive---and used the Adam optimizer with a fixed learning rate of $1 \times 10^{-5}$.
 
@@ -221,29 +274,27 @@ See \autoref{fig:supp_song_typle_clusters} for examples of song types defined in
 
 \subsection{Re-identifying individuals from their songs}
 
-In some cases, we failed to capture birds or identify them using PIT (Passive Integrated Transponder) tags, as tags sometimes malfunction, birds can be difficult to catch, or may have disappeared before their chicks were old enough for us to attempt capture at the next box. We were able to match an additional 31 song repertoires belonging to this subset of birds with existing individual IDs by using the deep metric learning model (ViT) described earlier to recognize individual songs. This increased the number of identified repertoires from 299 to 330, belonging to the same 242 unique birds. We summarise the process here, but see also \autocite{merinorecalde2023a} for details on model design and training.
+In some cases, we failed to capture birds or identify them using PIT (Passive Integrated Transponder) tags, as tags sometimes malfunction, birds can be difficult to catch, or may have disappeared before their chicks were old enough for us to attempt capture at the next box. We were able to match an additional 31 song repertoires belonging to this subset of birds with existing individual IDs by using the deep metric learning model (ViT) described earlier to recognize individual songs. This increased the number of identified repertoires from 299 to 330, belonging to the same 242 unique birds. We summarise the process here, but see also \autocite{merinorecalde2024} for details on model design and training.
 
 Briefly, we calculated pairwise song distances using the feature vectors obtained from a vision transformer on a metric learning task. This model achieved a mean average precision at 5 (mAP\@5) of 0.98 and a cumulative matching characteristic at 1 (CMC\@1) of 0.98, which roughly means that in 98\% of the queries made to the similarity space (on a held-out test data set of known songs) the candidate bird and song type returned by the model were correct. Given that the model was trained on almost 2000 classes, this means that there is enough individual information contained in each song type to distinguish between birds with very high confidence: even though many have likely copied tutor songs that were also in the data set, this model could still tell them apart.
 
 We used the calculated song distances to determine if two song repertoires came from the same bird, even when the bird wasn't physically identified more than once. We set very conservative criteria for this: at least two songs in the repertoires had to be more similar than the 0.025 quantile of the distance distribution for songs from known different birds, or (distance score of 0.9), and the bird must be within 100 meters of the reference bird. When we applied the metric learning model to songs from the entire population, which increases the risk of false positives, we found that the percentage of wrongly assigned birds in our ground truth data (birds that we have physically re-identified across years) was 0.3\%, or 34 out of 11,359 unique comparisons if we only used the acoustic distance criterion---further reduced to 0.04\%, or 4 out of 11359, when we also added the spatial constraint (see \autoref{fig:supp_acoustic_distance_threshold} for a graphic explanation).
 
-\subsection{Quantification and statistical analysis}
-
-\subsubsection{Modelling pairwise similarity and individual repertoires}
+\subsection{Modelling pairwise similarity and individual repertoires}
 
 It is common for analysis of song similarity to fit simple linear regression models using all pairwise comparisons in a population. However, this leads to very strong pseudo-replication and, therefore, an increased chance of Type I errors. To avoid this, we treated our song similarity data as a fully connected network and built Bayesian multilevel models with a multi-membership structure and the pairwise $\text{AMED}$ described above as the response variable. The full model specifications can be found in the \href{https://github.com/nilomr/birdsong-demography}{main repository} for this project; also see a summary in \autoref{table:model_info} and variable descriptions in \autoref{table:variable_key}.
 
-\paragraph{Individual repertoires}
+\subsubsection{Individual repertoires}
 We first modelled individual repertoire size using Poisson and negative binomial models, but this led to poor performance as assessed through posterior predictive checks (both underestimation of mean values and either under or over-estimation of very low repertoire sizes). Instead, we built continuation ratio models, a type of sequential ordinal model where reaching a particular level (number of song types in the repertoire) requires first reaching all lower levels \autocite{chambers2023, warti2020}. $rep_{m_1}$, $rep_{m_{1.1}}$, and $rep_{m_{1.2}}$ estimate the association between immigrant status, distance dispersed, age, and repertoire size. Three further log-normal models, $repnov_{m_1}$, $repnov_{m_{1.1}}$, $repnov_{m_{1.2}}$, do the same for the average cultural uniqueness of individual repertoires, defined as one minus the mean of the relative frequencies of each song type present in the repertoire.
 
-\paragraph{Pairwise similarity}
+\subsubsection{Pairwise similarity}
 Our first model ($disp_{m_1}$) explored the interaction between natal distance, that is, the distance between the nests where two resident birds hatched, and the distance between the centre of their breeding territories, adjusting for year and absolute age difference. We do not have direct information on how long birds have spent around one another, so instead we estimated the effect of the interaction of the distance at which they hatched and the distance at which they subsequently breed: If both are small, they will have had more opportunities for interaction and learning. We extracted predictions for the interaction and calculated marginal effects at minimum distances, to answer the questions 'How does cultural similarity change with distance for birds that hatch nearby' and 'Does how close a bird hatched matter for birds that end up holding neighbouring territories'. We used a similar model structure ($age_{m_1}$) to estimate the marginal effects of the absolute age difference, this time adjusting for the natal and territorial distance between birds. Then, to study the effect of immigration, we fit a model ($imm_{m_1}$) with the possible combinations of immigration status (both immigrant, both residents, one of each) and adjusted for age difference and territorial distance. 
 
 \phantomsection
-\subsubsection{\nmu Modelling group-level outcomes}
+\subsection{\nmu Modelling group-level outcomes}
 \label{sc:group-properties}
 
-\paragraph{Defining neighbourhoods and their demographic properties}
+\subsubsection{Defining neighbourhoods and their demographic properties}
 
 Song turnover, diversity, and uniqueness are group-level properties. However, our study lacks naturally occurring distinct subpopulations that we can use as units for analysis. Rather than partitioning the population using a discrete polygonal grid or non-overlapping areas, we opted to model neighbourhoods continuously across space, defining a radius of 200 m around each of 549 nest boxes that were occupied at least once during the study \autocite{fayet2014}, which we then sampled across the duration of the study. This radius is necessarily arbitrary but strikes a good compromise between capturing the relevant spatial scale at which vocal interactions occur, which extends up to around 180 metres \autocite{bircher2021, blumenrath2004}, and maintaining an adequate sample size in areas of low density (neighbourhood sizes range from $7$ to $60$, mean $30.3\pm14.9$). Importantly, neighbourhoods defined in this way are highly non-independent, so we modelled both this methodological spatial dependence and other sources of complex spatial autocorrelation intrinsic to the study site (such as edges, nest box density, etc.) by including a 2D Gaussian process (GP), which estimates a length-scale parameter defining a variance-covariance matrix for the spatial locations based on their distance \autocite{dearmon2016, gelfand2016, wright2021}. We confirmed that this eliminated the residual spatial autocorrelation via Moran's I tests. Note that we fitted a separate GP for each year, as treating the spatial dependence as fixed across the study duration, as is often done, risks further underestimating uncertainty.
 
@@ -258,7 +309,7 @@ We defined our predictor variables in the following way:
 
 \noindent\autoref{fig:supp_neighbourhood_sampling} illustrates that our sampling process did not introduce bias into any of these predictor variables: the birds from which we recorded song repertoires were, on average, representative of the true neighbourhood composition. \autoref{fig:supp_demo_variables} shows the distribution of the 'raw' variables across the study site.
 
-\paragraph{Operational definitions of cultural diversity, uniqueness, and turnover}
+\subsubsection{Operational definitions of cultural diversity, uniqueness, and turnover}
 \label{sc:op-definitions}
 
 In this paper we use simple descriptions of cultural diversity, cultural uniqueness, and cultural turnover that intuitively capture relevant aspects of the collective song repertoires of neighbourhoods in relation to the rest of the population. We defined our outcome variables in the following way:
@@ -272,48 +323,36 @@ In this paper we use simple descriptions of cultural diversity, cultural uniquen
 
 In this way, 'diversity' describes the relative proportion of distinct songs in a neighbourhood, and 'uniqueness' refers to how uncommon, on average, the songs of the birds in a neighbourhood are. These two ways of characterizing cultural diversity are (as expected) anti-correlated in our study site due to the effect of sampling: more frequent songs are sampled more readily, causing larger sample sizes---neighbourhoods with more density and therefore songs---to yield lower average estimates of diversity and higher average estimates of uniqueness, in a nonlinear manner. Once this is adjusted for, which we did by including  a GAM term capturing the nonlinear effect of the sample size, diversity and uniqueness are positively correlated, as expected (see \autoref{fig:supp_song_sampling}; models $nov_{m_2}$ and $nov_{m_{2.1}}$; spatial distribution of these variables in \autoref{fig:supp_cultural_variables}). All the relevant models adjusted for these effects of neighbourhood density and sampling.
 
-\paragraph{Models}
+\subsubsection{Models}
 
 To study the effect of dispersal and immigration on local cultural diversity and uniqueness, we built log-normal models ($div_{m_1}$, $nov_{m_1}$) and estimated the marginal effects of the proportion of immigrants, mean dispersal distance, and mean neighbourhood age, while also adjusting for individual turnover, year, and spatial dependence. Lastly, to examine whether the effects of immigration and dispersal on cultural diversity were related to individual differences in repertoire size and uniqueness, we fit two further models predicting the absolute number of distinct song types in a neighbourhood while also adjusting for the number of birds ($div_{m_2}$) and the number of songs ($div_{m_{2.1}}$).
 
 The rate of song cultural turnover was the response variable in two models: one ($turn_{m_1}$) trying to estimate the total effect of turnover and a second ($turn_{m_2}$) estimating the marginal effects of the proportion of immigrants, mean dispersal distance, and mean age while also adjusting for individual turnover, year, and spatial dependence. In both cases, we modelled the response distribution as a truncated log-normal with a hurdle (logistic) part to account for the zeroes. 
 
-\subsubsection{Model estimates and reporting}
+\subsection{Model estimates and reporting}
 
 We built the models and approximated the posterior distributions of the parameters of interest using brms \autocite{brms2017}, an interface to the Hamiltonian Monte Carlo engine Stan \autocite{stan2023}. We then processed the posterior distributions with the help of the marginaleffects package \autocite{marginaleffects}. We checked model convergence via the effective number of samples, visual inspection of the chain trace plots, and the Gelman-Rubin diagnostic. Estimation in a Bayesian framework returns a posterior distribution of possible values instead of point estimates. By convention, we report posterior central estimates (means or medians) and their 95\% credible intervals. Note that categorical predictors are dummy-coded and continuous predictors z-score transformed. Estimates in the text and tables are calculated as the posterior probability under a hypothesis (e.g., that a parameter estimate is greater than 0) against its alternative. Our figures include plots containing the posterior distributions of the marginal effect at the mean of each variable of interest. Regression plots show predicted values of the mean and their credible intervals, as well as partial residuals adjusted to the means or other relevant values of the explanatory terms included in the model \autocite{fox2018, larsen1972}. We have tried to build reasonable models, but even then our estimates should not be interpreted causally. \autoref{fig:supp_pp_checks} shows posterior predictive checks for all models in the study. See the software section at the end for a complete list of libraries used in the various analyses and the code repository for full model specifications.
 
-\subsubsection{Software}
+\subsection{Software}
 \begin{sloppypar}
 Song processing and analyses were carried out using pykanto \autocite{merinorecalde2023} and rely on the following open-source scientific libraries or tools: numpy \autocite{numpy2020}, scipy \autocite{scipy2020}, pandas \autocite{pandas2023}, numba \autocite{lam2015}, pytorch \autocite{pytorch2019}, torchvision \autocite{torchvision2016}, pytorch lightning \autocite{pytorchlightning2019}, tqdm \autocite{tqdm2019}, ray \autocite{moritz2018}, soundfile \autocite{bechtold2022}, umap \autocite{mcinnes2018},  joblib \autocite{joblib2020}, hdbscan \autocite{mcinnes2017}, seaborn \autocite{Waskom2021}, scikit-image \autocite{scikitimage2014}, librosa \autocite{mcfee2015}, bokeh \autocite{bokeh2018}, ujson \autocite{ujason2023}, psutil \autocite{psutil2023}, attrs \autocite{schlawack2019}. We also used R version 4.2.1 \autocite{base} and the following R packages: bayesplot \autocite{bayesplot2019, bayesplot2022}, box \autocite{box}, brms \autocite{brms2017, brms2021}, ClustGeo \autocite{ClustGeo}, colorspace \autocite{colorspace2020a}, config \autocite{config}, devtools \autocite{devtools}, DHARMa \autocite{DHARMa}, fs \autocite{fs}, ggdist \autocite{ggdist}, ggraph \autocite{ggraph}, httpgd \autocite{httpgd}, igraph \autocite{igraph2006, igraph2024}, insight \autocite{insight}, kableExtra \autocite{kableExtra}, languageserver \autocite{languageserver}, marginaleffects \autocite{marginaleffects}, modelsummary \autocite{modelsummary}, patchwork \autocite{patchwork}, progress \autocite{progress}, renv \autocite{renv}, rprojroot \autocite{rprojroot}, scales \autocite{scales}, scico \autocite{scico}, sf \autocite{sf2018, sf2023}, svglite \autocite{svglite}, terra \autocite{terra}, tidygraph \autocite{tidygraph}, tidyverse \autocite{tidyverse}, viridis \autocite{viridis}. See the code repositories for specific versions of these libraries.
 \end{sloppypar}
-
-\section{Acknowledgements}
-
-We thank all those who have contributed to the long-term nest box study in Wytham Woods and the collection of associated data. We also thank three anonymous reviewers for their constructive feedback. This work was supported by a Clarendon-Mary Frances Wagley Graduate Scholarship and an EGI scholarship to Nilo Merino Recalde, and made use of the University of Oxford Advanced Research Computing facility \autocite{richards2015}.
-
-\section{Author contributions}
-\textbf{Nilo Merino Recalde}: Conceptualization, Methodology, Software, Formal analysis, Investigation, Data Curation, Writing - Original Draft, Writing - Review \& Editing, Visualization. 
-\textbf{Andrea Estandía}: Investigation, Data Curation, Writing - Review \& Editing.
-\textbf{Sara C. Keen}: Writing -- Review \& Editing.
-\textbf{Ella F. Cole}: Supervision, Project Administration.
-\textbf{Ben C. Sheldon}: Supervision, Project Administration, Writing -- Review \& Editing, Funding Acquisition.
-
 
 \printbibliography
 
 \onecolumn
 \supplementarysection
 
-\input{tables/chapter_4/table_variablekey}
-\input{tables/chapter_4/table_modelspec}
-\input{tables/chapter_4/table_hypothesis}
+\input{table_modelspec}
+\input{table_variablekey}
+\input{table_hypothesis}
 
 
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/supp_study_site.pdf}
-    \mycaption{Map of the study site and sampling locations}{
+    \includegraphics[width=\linewidth]{supp_study_site.pdf}
+    \mycaption{Map of the study site and sampling locations. Related to STAR Methods}{
         This study was conducted in Wytham Woods, a 385-hectare semi-natural woodland surrounded by farmland. Data was collected during the breeding seasons of 2020, 2021, and 2022 by regularly checking 1018 nest boxes, documenting information such as breeding pair identities, clutch initiation and hatching dates, clutch size, and fledgling details according to standardized protocols, and recording the songs of the birds in the population using 60 AudioMoth acoustic logger. Each dot on the map shows the locations of a nest box where we recorded song repertoires.
     }
     \label{fig:supp_study_site}
@@ -323,8 +362,8 @@ We thank all those who have contributed to the long-term nest box study in Wytha
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/supp_neighbourhood_sampling.pdf}
-    \mycaption{Demographic characteristics of recorded birds compared to those of all birds in the neighbourhood}{
+    \includegraphics[width=\linewidth]{supp_neighbourhood_sampling.pdf}
+    \mycaption{Demographic characteristics of recorded birds compared to those of all birds in the neighbourhood. Related to STAR Methods}{
         Comparison between the actual neighbourhood properties and neighbourhood properties estimated from birds for which we have song recordings.
     (A) Neighbourhood size (number of individuals) and number of individuals for which we have song recordings in that same neighbourhood.
     (B) Proportion of resident birds calculated from monitoring data and only from those birds with song recordings. Residents are birds that were ringed as nestlings in the population.
@@ -337,8 +376,8 @@ We thank all those who have contributed to the long-term nest box study in Wytha
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/supp_demo_variables.pdf}
-    \mycaption{Spatial distribution of the neighbourhood-level predictor variables in the study}{
+    \includegraphics[width=\linewidth]{supp_demo_variables.pdf}
+    \mycaption{Spatial distribution of the neighbourhood-level predictor variables in the study. Related to STAR Methods}{
     (A) Mean natal dispersal distance, or the mean distance between the natal nest box and the breeding site for all birds in the neighbourhood.
     (B) Proportion of immigrant birds in the neighbourhood.
     (C) Mean age of birds in the neighbourhood.
@@ -349,8 +388,8 @@ We thank all those who have contributed to the long-term nest box study in Wytha
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/supp_song_typle_clusters.pdf}
-    \mycaption{Examples of song type clusters in the study population}
+    \includegraphics[width=\linewidth]{supp_song_typle_clusters.pdf}
+    \mycaption{Examples of song type clusters in the study population. Related to STAR Methods}
     {
 Colours and connected lines represent the same song type cluster sung by different birds. Some song types are sung by many birds, while others are unique to a single bird. The clustering process is based on song similarity derived from a deep metric learning model and a manual categorization process following McGregor and Krebs \autocite{mcgregor1982b}.
     }
@@ -360,8 +399,8 @@ Colours and connected lines represent the same song type cluster sung by differe
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/supp_song_sampling.pdf}
-    \mycaption{Estimates of cultural outcomes depend on the size of the neighbourhood repertoire}
+    \includegraphics[width=\linewidth]{supp_song_sampling.pdf}
+    \mycaption{Estimates of cultural outcomes depend on the size of the neighbourhood repertoire. Related to STAR Methods and Figure 2}
     {
         (A) Marginal effect of diversity---which describes the proportion of distinct songs in a neighbourhood---on uniqueness, that is, how rare, on average, the songs of the birds in a neighbourhood are in the popualtion. These two ways of characterizing cultural diversity are anti-correlated in our study site due to the effect of sampling: more frequent songs are sampled more readily, causing larger sample sizes (neighbourhoods with more birds and therefore songs) to yield lower average estimates of diversity (B) and higher average estimates of uniqueness (C), in a nonlinear manner. Once this is adjusted for, which we do by including GAM terms capturing neighbourhood song density or number of birds, diversity and uniqueness are positively correlated, as expected. (D) Our measure of cultural uniqueness (y-axis) has the advantages of being continuous and not using an arbitrary cut-off, but is nonetheless correlated with definitions traditionally used in the literature, such as 'songs shared by fewer than 4 birds” \autocite{mcgregor1982b}, here on the x-axis.}
     \label{fig:supp_song_sampling}
@@ -369,8 +408,8 @@ Colours and connected lines represent the same song type cluster sung by differe
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/supp_cultural_variables.pdf}
-    \mycaption{Spatial distribution of the neighbourhood-level cultural variables in the study}
+    \includegraphics[width=\linewidth]{supp_cultural_variables.pdf}
+    \mycaption{Spatial distribution of the neighbourhood-level cultural variables in the study. Related to STAR Methods}
     {
         (A) Relative cultural diversity ('diversity'): the ratio of distinct song types recorded in a neighbourhood to the total number of songs recorded in that neighbourhood. Higher values indicate that there are more distinct song types in the neighbourhood relative to its total song output.
         (B) Uniqueness index: the complement of the logarithm of the mean population-wide frequency of the song types present in a neighbourhood. Higher values indicate that the songs in the neighbourhood are on average less common in the population.
@@ -383,8 +422,8 @@ Colours and connected lines represent the same song type cluster sung by differe
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/supp_acoustic_distance_threshold.pdf}
-    \mycaption{Thresholds for re-identifying individual birds based on their songs}{
+    \includegraphics[width=\linewidth]{supp_acoustic_distance_threshold.pdf}
+    \mycaption{Thresholds for re-identifying individual birds based on their songs. Related to STAR Methods}{
     We used conservative criteria to infer when two repertoires belong to the same bird. Acoustic similarity: A minimum of two matching songs must be more similar than the 0.025 quantile of the distance distribution (an acoustic distance of 0.9). Spatial proximity: The bird must be no more than 100 meters apart from the reference bird.
     Accuracy of the method: Using only acoustic distance: 0.3\% error rate (34 out of 11,359 unique comparisons). Using acoustic distance and spatial constraint: 0.04\% error rate (4 out of 11,359 comparisons). These error rates were calculated using only ground truth data from physically re-identified birds across years.
 
@@ -398,9 +437,9 @@ Colours and connected lines represent the same song type cluster sung by differe
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/supp_song_frequencies.pdf}
+    \includegraphics[width=\linewidth]{supp_song_frequencies.pdf}
     \mycaption{
-        Song frequencies and their relationship with abundance in the following year}{
+        Song frequencies and their relationship with abundance in the following year. Related to STAR Methods}{
         (A) The abundance of a song type in a year predicts its abundance in the following year, with higher stochasticity around rare songs. (B) Histogram showing the frequency of individual song types in the study.
     }
     \label{fig:supp_song_frequencies}
@@ -408,8 +447,8 @@ Colours and connected lines represent the same song type cluster sung by differe
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/supp_absolute_cultural_diversity.pdf}
-    \mycaption{Effect of demographic variation on absolute cultural diversity within neighbourhoods}{
+    \includegraphics[width=\linewidth]{supp_absolute_cultural_diversity.pdf}
+    \mycaption{Effect of demographic variation on absolute cultural diversity within neighbourhoods. Related to Figure 2 and STAR Methods}{
         To explore how the number of individuals and their repertoire sizes within a neighbourhood affect the total number of distinct song types recorded within a neighbourhood (as opposed to the relative diversity reported in \autoref{c4_fig:diversity}), we fit two models: one adjusting for the nonlinear effect of the number of individuals (higher opacity fill, corresponding to model \textit{div\_m\_2}), and a second adjusting for the nonlinear effect of the number of song types, including repeated variants (lower opacity fill, \textit{div\_m\_2.1}). See \autoref{table:model_info} for full model specifications.
     }
     \label{fig:supp_absolute_cultural_diversity}
@@ -417,8 +456,8 @@ Colours and connected lines represent the same song type cluster sung by differe
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/supp_dispersal_simulation.pdf}
-    \mycaption{Simulation of the effect of natal dispersal on repertoire uniqueness}
+    \includegraphics[width=\linewidth]{supp_dispersal_simulation.pdf}
+    \mycaption{Simulation of the effect of natal dispersal on repertoire uniqueness. Related to STAR Methods}
     {
         We simulate the relationship between pre-breeding bird movement and the uniqueness of songs in their repertoires  (relative to the population). We initialize 200 birds in a 1500 x 1500 square, each capable of singing 4 songs selected from
         a pool of 200 song types. Birds do not initially move. New birds hatch and move based on a log-normal distribution parametrized to represent realistic dispersal behaviour in our population. Each bird can learn the songs it hears within a 200 m radius as it moves. At the end of their movement, a bird's crystallized repertoire is determined by its learning mechanism: (A) random learning of songs, (B) linearly frequency-dependent learning, (C) positively frequency-dependent learning, or (D) learn the most popular songs (strong conformism). The simulation is repeated $n$ times per learning strategy, and we record the average uniqueness of songs in each bird's repertoire, which is a transformation of the average frequency of the bird's songs, as well as the distance that each bird has moved. The results show that the relationship between dispersal and repertoire uniqueness depends on the learning mechanism, and that the effect of dispersal detected in our study might be expected to arise if being exposed to a larger number of songs influences learning in a nonlinear frequency-dependent manner.
@@ -429,9 +468,9 @@ Colours and connected lines represent the same song type cluster sung by differe
 
 \begin{figure}[tbp]
     \centering
-    \includegraphics[width=\linewidth]{figures/chapter_4/supp_pp_checks.pdf}
+    \includegraphics[width=\linewidth]{supp_pp_checks.pdf}
     \mycaption{
-        Posterior predictive checks for the main models in the study}{Comparing simulations from the posterior predictive distribution $y^{rep}$ (thin orange lines) with the outcome $y$ (black lines) using Kernel density estimates. The posterior predictive distribution is a distribution of possible outcomes of the model given the data and the model parameters, here used to check the fit of the model to the data.
+        Posterior predictive checks for the main models in the study. Related to STAR Methods}{Comparing simulations from the posterior predictive distribution $y^{rep}$ (thin orange lines) with the outcome $y$ (black lines) using Kernel density estimates. The posterior predictive distribution is a distribution of possible outcomes of the model given the data and the model parameters, here used to check the fit of the model to the data.
     }
     \label{fig:supp_pp_checks}
 \end{figure}
