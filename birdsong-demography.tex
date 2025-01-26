@@ -19,9 +19,6 @@
 \setstretch{1.15} % body line space
 %\renewcommand{\familydefault}{\sfdefault} % sans serif for review
 
-\runningauthor{Merino Recalde \textit{et al}., 2024 }
-\runningtitle{The demographic drivers of cultural evolution in bird song}
-
 \begin{document}
 
 \title{A multilevel study of the demographic drivers of cultural evolution in bird song}
@@ -32,14 +29,14 @@
 \author[1]{Ben C. Sheldon\,\orcidlink{0000-0002-5240-7828}} 
 
 \affil[1]{
-    Edward Grey Institute, Department of Biology, University of Oxford, Oxford, UK
+    Edward Grey Institute, Department of Biology, University of Oxford, Oxford OX1 3RB, UK
 }
 \affil[2]{
     Earth Species Project, 1536 Oxford St. Berkeley CA 94709, US
 }
 
 
-\correspondingauthoraffiliation[$\ast$]{Corresponding author: \href{mailto:nilo.recalde@biology.ox.ac.uk}{nilo.recalde@biology.ox.ac.uk}}
+\correspondingauthoraffiliation[$\ast$]{Lead contact: \href{mailto:nilo.recalde@biology.ox.ac.uk}{nilo.recalde@biology.ox.ac.uk}}
 
 
 \begin{abstract}
@@ -53,35 +50,10 @@ Social learning can give rise to shared behavioural patterns that persist as cul
 
 Culture is increasingly recognized as both a fundamental aspect of many animals' lives and a valuable tool in monitoring and conservation efforts \autocite{laiolo2007, brakes2021, jesmer2018}. Cultural traits play a role in the survival and reproduction of individuals and social groups; they reflect or even shape the structure of the population \autocite{brakes2019, garland2015}, and can be lost when habitat fragmentation and population decline lead to reduced learning opportunities \autocite{paxton2019, crates2021}. Neutral and selective mechanisms drive cultural evolution \autocite{potvin2015, williams2021, williams2013, youngblood2022, williams2022}, resulting in 'traditions' that differ considerably in their diversity and stability \autocite{tchernichovski2017}. While the effects of social learning strategies---such as frequency dependence and tutor biases---on the diversity and stability of cultures are well-documented \autocite{pike2010, kendal2015, aplin2017, lachlan2018, tchernichovski2021}, our understanding of how demography affects cultural traits within wild populations is less well developed. Processes such as the recruitment of juveniles, immigration, emigration, mortality, and variation in age structure are likely to strongly affect an individual's opportunities for learning and exposure to different cultural variants, as it has been amply emphasized by theoretical work \autocite{deffner2022a, deffner2022, kandler2017, kandler2023, fogarty2019, deffner2020, derex2016, derex2018, kirby2021, nunn2009, barta2023, dyble2024, chimento2024}. However, translating theoretical expectations into empirical evidence remains a challenge (see \autocite{chimento2021, fayet2014, payne1993, graham2017, laiolo2008} for exceptions). A comprehensive understanding of cultural dynamics in the wild requires examining both intrinsic factors---social, cultural, and cognitive, which have received greater attention---and extrinsic, ecological and demographic processes. This includes identifying the spatial and temporal scales at which these processes operate and evaluating their relative significance within natural populations.
 
-\begin{figure*}[!ht]
-    \centering
-    \includegraphics[width=\linewidth]{FIG1.pdf}
-    \mycaption{Study system and main variables in our analysis}{
-        (A) Cultural variables measured at the neighbourhood level. Higher values of cultural diversity indicate that there are more distinct song types in the neighbourhood relative to the total song output. Higher cultural uniqueness indicates that the songs in the neighbourhood are on average less common in the population, and higher cultural turnover indicates that the neighbourhood's song repertoire has changed more from one year to the next. See \hyperref[sc:op-definitions]{definitions} for full definitions.
-
-        (B) Variation in the demographic properties and composition of neighbourhoods across the population. See \hyperref[sc:group-properties]{demographic variables} for full definitions.
-
-        (C) Cartoon representation of the pairwise continuous repertoire similarity network used in our individual level analyses. Each node represents an individual bird, and the edges represent the similarity between their song repertoires. The network is based on the similarity of the songs produced by each bird during the dawn chorus, and is used to estimate the cultural similarity between individuals.
-        
-        (D) 3D render of our study site, Wytham Woods, seen from the East. Image based on first return LiDAR data \autocite{defra2020} and made with rayshader \autocite{rayshader2023}. Elevation is exaggerated. Aquamarine (darker) arrows represent natal dispersal within the population, and the yellow (lighter) arrow represents immigration into the population, two of the variables used in this work. Age and bird (individual) turnover are not depicted.        
-    }
-    \label{c4_fig:main}
-\end{figure*}
-
 To contribute to this goal, we built a comprehensive data set that spans three years and documents the dawn songs produced by male great tit birds during 454 breeding attempts in a single population located in Wytham Woods, UK. The population's marked variation in individual turnover, postnatal dispersal distances, age structure, and immigration across space---known through ongoing long-term monitoring \autocite{lack1964}---allowed us to estimate their effects on song cultural repertoires at individual and group levels. First, we assigned more than 109,000 songs in 330 song repertoires to 242 individual birds through direct physical capture, radio frequency identification microchips, and a novel song-based re-identification method that uses a deep metric learning model. Then, we quantified individual and group-level traits and analysed variation in song cultural similarity, diversity, and turnover (see \hyperref[sc:group-properties]{definitions}) using network and spatially explicit Bayesian multilevel regression models. See \autoref{c4_fig:main} for a visual abstract of the study.
 
 
-\begin{figure*}[!hbt]
-    \centering
-    \includegraphics[width=\linewidth]{FIG3.pdf}
-    \mycaption{Influence of demographic variables on cultural diversity and uniqueness within neighbourhoods}{
-        (A) Marginal effects at the mean of neighbourhood characteristics including mean dispersal distance, proportion of immigrant birds, average age, and individual turnover. See \hyperref[sc:group-properties]{methods} for full definitions.
-        (B) Adjusted predictions and partial residuals of the effect of mean neighbourhood dispersal distance on cultural uniqueness. Low-dispersal neighbourhoods are those in which birds hatched in the same area.
-        (C) Adjusted predictions and partial residuals of the effect of the mean age of the neighbourhood on cultural diversity. A neighbourhood with a mean age of 1 would be one where all birds are breeding for the first time.
-        (D) The average distribution of cultural diversity in the population across space during the study period (2020-2022). This map captures the residual variation in cultural diversity after taking into account the demographic variables in (A). The map is based on a Gaussian process model with an exponentiated-quadratic kernel covariance function, which allows us to interpolate between the locations where we have data.
-    }
-    \label{c4_fig:diversity}
-\end{figure*}
+
 
 Our results reveal an interplay of demographics and song cultural dynamics that, albeit complex, largely matches theoretical expectations. This work also demonstrates that bird song, which already provides what is perhaps the largest body of evidence for cultural change in animals \autocite{laland2006}, also has the potential to help us shed light on the impact of other population processes on animal cultures, owing to the fact that we can sample individual song repertoires with relative ease.
 
@@ -90,17 +62,6 @@ Our results reveal an interplay of demographics and song cultural dynamics that,
 Population genetics provides robust evidence supporting the notion that high dispersal rates facilitate gene flow, which, in turn, reduces the efficacy of selection and diversification. Conversely, low dispersal facilitates genetic differentiation through mechanisms such as mutation and drift, leading to allopatric population divergence \autocite{suarez2022, claramunt2011, papadopoulou2009}. Were we to adhere to an analogy from genetics to culture, we would anticipate that reduced dispersal rates will decelerate the diffusion of cultural traits \autocite{nunn2009}. This, in turn, should result in the maintenance of distinct behavioural patterns within populations if learning is somewhat accurate, leading to a greater number of cultural variants unique to a neighbourhood or region \autocite{whitehead2012, planque2014}. Our analysis indeed indicates that neighbourhoods (see \hyperref{sc:group-properties}{definitions} where more birds have remained in proximity to their natal areas harbour greater and more unique cultural diversity (\textit{diversity:} $P(\beta_{disp (\overline{m})} < 0 | D) = 1,~ mem = -0.018,~CI_{95\%}~[-0.023, -0.012]$; \textit{uniqueness:} $P(\beta_{disp (\overline{m})} < 0 | D) = 0.96,~ mem = -0.005,~CI_{95\%}~[-0.01, 0]$; \figref[a\&b]{c4_fig:diversity}, \autoref{table:model_estimates}; see \autoref{sc:group-properties}), in line with prior research at a much coarser grain \autocite{fayet2014}. 
 
 The analogy breaks down as soon as we consider the underlying individual-level mechanisms, however, due to complex interactions between the timing of dispersal and learning mechanisms that are specific to the cultural domain. Some species only learn songs from their parents and early in life, in a manner reminiscent of genetic inheritance, while others learn continuously from their neighbours, or only after dispersal (see \autocite{searcy2021} for an overview of different strategies). In the case of our study species, the great tit, these learning mechanisms are thought to involve selective retention or modification of songs encountered early in life, while they disperse, and up until before they begin breeding for the first time---a process that results in crystallized repertoires of 1 to $\simeq$ 10 different song types \autocite{mcgregor1982b,rivera-gutierrez2011,merinorecalde2024}. In our individual-level analysis, we see that birds that dispersed over longer distances tend to have learned repertoires composed of songs that are more common within the population (\textit{uniqueness:} $P(\beta_{disp (m)} < 0 | D) = 1,~mem = -0.2,~CI_{95\%}~[-0.3, -0.09]$; \figref[b]{c4_fig:individual}, \autoref{table:model_estimates}), and possibly smaller repertoires as well (\textit{rep.size:} $P(\beta_{disp (m)} < 0 | D) = 0.91,~mem = -0.2,~CI_{95\%}~[-0.44, 0.05]$; \figref[b]{c4_fig:individual}; \autoref{table:model_estimates}). We hypothesize that birds with more extensive movements are more likely to sample and acquire a larger proportion of common cultural variants, simply because they are exposed to more songs across their learning period. This finds support in a spatially explicit simulation of song learning with dispersal, which shows this pattern would emerge under positive frequency-dependent learning or a process leading to similar acquisition curves (see \autoref{fig:supp_dispersal_simulation}; note that we do not currently know which learning strategies are employed by great tits).
-
-\begin{figure*}[!t]
-    \centering
-    \includegraphics[width=\linewidth]{FIG2.pdf}
-    \mycaption{Individual and dyadic analysis of cultural diversity and similarity}{
-        (A) Illustrative example showing the repertoires of two different birds in the population, with three songs in each, one of which is shared. Each sub-panel shows a cartoon spectrogram, with time in the horizontal axis and frequency in the vertical. Units not shown.
-        (B) Marginal effects of dispersal, immigration status, and age on individual song repertoires, described in terms of their absolute size (the total number of distinct song types sung by that bird) and their uniqueness (how rare, on average, the songs types are in the population within that year).
-        (C) Marginal effects of dispersal, immigration status, and age on song repertoire similarity between individuals. Dispersal: Birds that are close neighbours are more culturally similar, regardless of where they hatched, whereas natal distance may have a weak positive effect on cultural similarity. Immigration: There is no strong evidence that birds that hatched outside the population are dissimilar from resident birds. Age difference: Birds are less culturally similar the greater the difference in their birth years, which evidences cultural change.
-    }
-    \label{c4_fig:individual}
-\end{figure*}
 
 Building on our understanding of cultural dynamics in relation to dispersal we expect that, when song learning is relatively precise and dispersal is limited, cultural differences between populations will accumulate, and immigration will introduce cultural novelty to the recipient population. However, the extent to which immigration introduces new cultural variants also hinges on an interplay between the species' learning programme, the timing of dispersal, and the spatial movements of individuals. Animals that learn first and then disperse, for example, may bring cultural novelty with them. But this is not the case for great tits, whose young disperse in late summer and autumn, shortly after achieving independence, learn their songs until the end of their first winter \autocite{rivera-gutierrez2011}, and become chiefly sedentary as adults \autocite{greenwood1979, dhondt1979, dingemanse2003}. In this species, then, we anticipate that immigrant birds will learn or retain songs they encounter upon arrival, either before or during the establishment of their territories \autocite{keen2020, graham2018}.
 
@@ -111,19 +72,6 @@ However, immigrant birds, while not acoustically distinct, tend to have larger r
 Previous research \autocite{verhulst1997}  has revealed that most birds arriving from outside the population disperse over two kilometres, significantly farther than the typical distances observed within the population (median for males = 558 metres \autocite{greenwood1979}). This extended dispersal may have qualitative consequences for cultural diversity, through a combination of factors: first, an initial exposure to songs from the source population; then, a heightened pressure to adopt vocalisations similar to those of territorial neighbours to avoid any social or reproductive costs associated with non-local signals, as seen in other species \autocite{payne1983, baker1981, mortega2014, lachlan2014, beecher2008}.
 
 Finally, we find that individual turnover does not significantly affect cultural diversity or uniqueness, and we uncover an association between age structure and cultural diversity and uniqueness. Individuals of the same generation share the most similar song repertoires, and while age itself does not directly relate to changes in the repertoires of individual birds (\figref[b]{c4_fig:individual}), the acoustic similarity between pairs of individuals decreases as the age gap between them widens (\figref[c]{c4_fig:individual}; \autoref{table:model_estimates}). This is expected in birds that cease to learn new songs as they age, and has detectable consequences for neighbourhoods: those with a higher proportion of older individuals have heightened levels of cultural diversity and uniqueness (\figref[a\&c]{c4_fig:diversity}, \autoref{fig:supp_absolute_cultural_diversity}). Conversely, in areas where the majority of the population comprises younger birds surrounded by similar-aged peers, individual birds tend to sing fewer song types, and those song types tend to be more common within the population (\textit{diversity:} $P(\beta_{\overline{age}} < 0 | D) = 1,~mem=0.021,~CI_{95\%}~[0.014, 0.027]$; \textit{uniqueness:} $P(\beta_{\overline{age}} < 0 | D) = 0.99,~mem=0.012,~CI_{95\%}~[0.005, 0.019]$; \figref[a\&c]{c4_fig:diversity}, \autoref{table:model_estimates}).
-
-\begin{figure*}[!htb]
-    \centering
-    \includegraphics[width=\linewidth]{FIG4.pdf}
-    \mycaption{Influence of demographic variables on cultural turnover within neighbourhoods}{
-        (A) Marginal effect at the means for mean dispersal distance, proportion of immigrant birds, average age, and individual turnover on the rate of cultural turnover within neighbourhoods
-        (B and C) Adjusted predictions and partial residuals of the effects of the proportion of individual turnover on cultural turnover (B) and the effect of mean neighbourhood age on cultural turnover within neighbourhoods (C).
-        (D) The population's average distribution of cultural turnover across space during the study period (2020-2022).
-        (E) Posterior counterfactual predictions for two scenarios: all variables at their maximum (Max.) and minimum (Min.) observed values in the population, holding turnover constant at its mean value. Cultural turnover is expected to be over two times higher if neighbourhood dispersal, immigration and age are low, as they slow down cultural change.
-    }
-    \label{c4_fig:turnover}
-\end{figure*}
-
 
 \subsection{Demographic processes moderate the rate of cultural change at small spatio-temporal scales}
 
@@ -139,7 +87,6 @@ Cultural traits, learnt bird song in this case, are shaped by many factors: some
 
 Our study explores how demographic processes influence cultural diversity and the pace of cultural change on small spatial and temporal scales. We show that these factors can significantly shape cultural dynamics within a wild bird population, though their effect on long-term cultural diversification and stability remains uncertain. Both empirical studies and modeling efforts on cultural dynamics should consider the population's demographic characteristics and their variability across time and space, as these factors determine individuals' exposure to cultural variants and learning opportunities, ultimately affecting emergent group-level cultural dynamics.
 
-
 \section{Resource availability}
 
 \subsection{Lead contact}
@@ -149,7 +96,11 @@ Requests for further information and resources should be directed to the lead co
 This study did not generate new unique reagents.
 
 \subsection{Data and code availability}
-The complete Wytham great tit song data set is available at \href{https://osf.io/n8ac9}{osf.io/n8ac9} \autocite{nilo_gretidataset_osf_2023}, and documented at \href{https://nilomr.github.io/great-tit-hits/}{nilomr.github.io/great-tit-hits}. The main repository with code and data to reproduce the analysis and figures in this article can be found at \href{http://github.com/nilomr/birdsong-demography}{github.com/nilomr/birdsong-demography}, deposited at \href{https://zenodo.org/records/12800736}{10.5281/zenodo.12800735} \autocite{merino_recalde_2024_songdemo_code}.
+\begin{itemize}
+    \item The complete Wytham great tit song dataset has been deposited at OSF and is publicly available at \href{https://osf.io/n8ac9}{osf.io/n8ac9} \autocite{nilo_gretidataset_osf_2023}. Documentation for the dataset is available at \href{https://nilomr.github.io/great-tit-hits/}{nilomr.github.io/great-tit-hits/}.
+    \item All original code and data used to reproduce the analyses and figures in this article have been deposited at Zenodo and are publicly available at \href{https://zenodo.org/records/12800736}{10.5281/zenodo.12800735} \autocite{merino_recalde_2024_songdemo_code}. The repository can also be accessed at \href{https://github.com/nilomr/birdsong-demography}{github.com/nilomr/birdsong-demography}.
+    \item Any additional information required to reanalyze the data reported in this paper is available from the lead contact.
+\end{itemize}
 
 \section{Acknowledgements}
 
@@ -165,31 +116,58 @@ We thank all those who have contributed to the long-term nest box study in Wytha
 \section{Declaration of interests}
 The authors declare no competing interests.
 
-\section{STAR\texorpdfstring{$\bigstar$}{*}Methods}
+\clearpage
+\section{Figure legends}
 
-\section{Key resources table}
-\begin{table}[h!]
+\begin{figure*}[!h]
     \centering
-    \renewcommand{\arraystretch}{1.5}
-    \setlength{\tabcolsep}{6pt}
-    \begin{tblr}{
-        colspec={lXX},
-        row{1} = {white},
-        row{3,5,7,10} = {gray!10},
-        hline{1,2,3,4,5,6,7,8,9,10,11,Z} = {0.5pt}
+    \mycaption{Study system and main variables in our analysis}{
+        (A) Cultural variables measured at the neighbourhood level. Higher values of cultural diversity indicate that there are more distinct song types in the neighbourhood relative to the total song output. Higher cultural uniqueness indicates that the songs in the neighbourhood are on average less common in the population, and higher cultural turnover indicates that the neighbourhood's song repertoire has changed more from one year to the next. See \hyperref[sc:op-definitions]{definitions} for full definitions.
+
+        (B) Variation in the demographic properties and composition of neighbourhoods across the population. See \hyperref[sc:group-properties]{demographic variables} for full definitions.
+
+        (C) Cartoon representation of the pairwise continuous repertoire similarity network used in our individual level analyses. Each node represents an individual bird, and the edges represent the similarity between their song repertoires. The network is based on the similarity of the songs produced by each bird during the dawn chorus, and is used to estimate the cultural similarity between individuals.
+        
+        (D) 3D render of our study site, Wytham Woods, seen from the East. Image based on first return LiDAR data \autocite{defra2020} and made with rayshader \autocite{rayshader2023}. Elevation is exaggerated. Aquamarine (darker) arrows represent natal dispersal within the population, and the yellow (lighter) arrow represents immigration into the population, two of the variables used in this work. Age and bird (individual) turnover are not depicted.        
     }
-        \textbf{REAGENT or RESOURCE} & \textbf{SOURCE} & \textbf{IDENTIFIER} \\
-        \textbf{Deposited data} & & \\
-        Wytham great tit song dataset & \autocite{nilo_gretidataset_osf_2023, nilo} & \href{https://osf.io/n8ac9}{osf.io/n8ac9} \\
-        \textbf{Experimental models: Organisms/strains} & & \\
-        Great tit (\textit{Parus major}) & Wild population at Wytham Woods, Oxford, UK & N/A \\
-        \textbf{Software and Algorithms} & & \\
-        Analysis code and data & This paper and \autocite{merino_recalde_2024_songdemo_code} & \href{https://github.com/nilomr/birdsong-demography}{github.com/nilomr/birdsong-demography} \\
-        pykanto & \autocite{merinorecalde2023} & \href{https://github.com/nilomr/pykanto}{github.com/nilomr/pykanto} \\
-        \textbf{Other} & & \\
-        AudioMoth recorders & \autocite{hill2019} & \href{https://www.openacousticdevices.info}{openacousticdevices.info}
-    \end{tblr}
-\end{table}
+    \label{c4_fig:main}
+\end{figure*}
+
+\begin{figure*}[!h]
+    \centering
+    \mycaption{Influence of demographic variables on cultural diversity and uniqueness within neighbourhoods}{
+        (A) Marginal effects at the mean of neighbourhood characteristics including mean dispersal distance, proportion of immigrant birds, average age, and individual turnover. See \hyperref[sc:group-properties]{methods} for full definitions.
+        (B) Adjusted predictions and partial residuals of the effect of mean neighbourhood dispersal distance on cultural uniqueness. Low-dispersal neighbourhoods are those in which birds hatched in the same area.
+        (C) Adjusted predictions and partial residuals of the effect of the mean age of the neighbourhood on cultural diversity. A neighbourhood with a mean age of 1 would be one where all birds are breeding for the first time.
+        (D) The average distribution of cultural diversity in the population across space during the study period (2020-2022). This map captures the residual variation in cultural diversity after taking into account the demographic variables in (A). The map is based on a Gaussian process model with an exponentiated-quadratic kernel covariance function, which allows us to interpolate between the locations where we have data.
+        See also \autoref{fig:supp_absolute_cultural_diversity} and \autoref{fig:supp_song_sampling}.
+    }
+    \label{c4_fig:diversity}
+\end{figure*}
+
+\begin{figure*}[!h]
+    \centering
+    \mycaption{Individual and dyadic analysis of cultural diversity and similarity}{
+        (A) Illustrative example showing the repertoires of two different birds in the population, with three songs in each, one of which is shared. Each sub-panel shows a cartoon spectrogram, with time in the horizontal axis and frequency in the vertical. Units not shown.
+        (B) Marginal effects of dispersal, immigration status, and age on individual song repertoires, described in terms of their absolute size (the total number of distinct song types sung by that bird) and their uniqueness (how rare, on average, the songs types are in the population within that year).
+        (C) Marginal effects of dispersal, immigration status, and age on song repertoire similarity between individuals. Dispersal: Birds that are close neighbours are more culturally similar, regardless of where they hatched, whereas natal distance may have a weak positive effect on cultural similarity. Immigration: There is no strong evidence that birds that hatched outside the population are dissimilar from resident birds. Age difference: Birds are less culturally similar the greater the difference in their birth years, which evidences cultural change.
+    }
+    \label{c4_fig:individual}
+\end{figure*}
+
+\begin{figure*}[!h]
+    \centering
+    \mycaption{Influence of demographic variables on cultural turnover within neighbourhoods}{
+        (A) Marginal effect at the means for mean dispersal distance, proportion of immigrant birds, average age, and individual turnover on the rate of cultural turnover within neighbourhoods
+        (B and C) Adjusted predictions and partial residuals of the effects of the proportion of individual turnover on cultural turnover (B) and the effect of mean neighbourhood age on cultural turnover within neighbourhoods (C).
+        (D) The population's average distribution of cultural turnover across space during the study period (2020-2022).
+        (E) Posterior counterfactual predictions for two scenarios: all variables at their maximum (Max.) and minimum (Min.) observed values in the population, holding turnover constant at its mean value. Cultural turnover is expected to be over two times higher if neighbourhood dispersal, immigration and age are low, as they slow down cultural change.
+    }
+    \label{c4_fig:turnover}
+\end{figure*}
+
+
+\section{STAR\texorpdfstring{$\bigstar$}{*}Methods}
 
 \section{Experimental model and study participant details}
 
@@ -340,14 +318,12 @@ Song processing and analyses were carried out using pykanto \autocite{merinoreca
 
 \printbibliography
 
+\clearpage
+\pagestyle{empty}
+\pagenumbering{gobble}
+\nolinenumbers
 \onecolumn
 \supplementarysection
-
-\input{table_modelspec}
-\input{table_variablekey}
-\input{table_hypothesis}
-
-
 
 \begin{figure}[tbp]
     \centering
@@ -391,7 +367,7 @@ Song processing and analyses were carried out using pykanto \autocite{merinoreca
     \includegraphics[width=\linewidth]{supp_song_typle_clusters.pdf}
     \mycaption{Examples of song type clusters in the study population. Related to STAR Methods}
     {
-Colours and connected lines represent the same song type cluster sung by different birds. Some song types are sung by many birds, while others are unique to a single bird. The clustering process is based on song similarity derived from a deep metric learning model and a manual categorization process following McGregor and Krebs \autocite{mcgregor1982b}.
+Colours and connected lines represent the same song type cluster sung by different birds. Some song types are sung by many birds, while others are unique to a single bird. The clustering process is based on song similarity derived from a deep metric learning model and a manual categorization process following McGregor and Krebs, as described in the STAR methods.
     }
     \label{fig:supp_song_typle_clusters}
 \end{figure}
@@ -402,7 +378,7 @@ Colours and connected lines represent the same song type cluster sung by differe
     \includegraphics[width=\linewidth]{supp_song_sampling.pdf}
     \mycaption{Estimates of cultural outcomes depend on the size of the neighbourhood repertoire. Related to STAR Methods and Figure 2}
     {
-        (A) Marginal effect of diversity---which describes the proportion of distinct songs in a neighbourhood---on uniqueness, that is, how rare, on average, the songs of the birds in a neighbourhood are in the popualtion. These two ways of characterizing cultural diversity are anti-correlated in our study site due to the effect of sampling: more frequent songs are sampled more readily, causing larger sample sizes (neighbourhoods with more birds and therefore songs) to yield lower average estimates of diversity (B) and higher average estimates of uniqueness (C), in a nonlinear manner. Once this is adjusted for, which we do by including GAM terms capturing neighbourhood song density or number of birds, diversity and uniqueness are positively correlated, as expected. (D) Our measure of cultural uniqueness (y-axis) has the advantages of being continuous and not using an arbitrary cut-off, but is nonetheless correlated with definitions traditionally used in the literature, such as 'songs shared by fewer than 4 birds” \autocite{mcgregor1982b}, here on the x-axis.}
+        (A) Marginal effect of diversity---which describes the proportion of distinct songs in a neighbourhood---on uniqueness, that is, how rare, on average, the songs of the birds in a neighbourhood are in the popualtion. These two ways of characterizing cultural diversity are anti-correlated in our study site due to the effect of sampling: more frequent songs are sampled more readily, causing larger sample sizes (neighbourhoods with more birds and therefore songs) to yield lower average estimates of diversity (B) and higher average estimates of uniqueness (C), in a nonlinear manner. Once this is adjusted for, which we do by including GAM terms capturing neighbourhood song density or number of birds, diversity and uniqueness are positively correlated, as expected. (D) Our measure of cultural uniqueness (y-axis) has the advantages of being continuous and not using an arbitrary cut-off, but is nonetheless correlated with definitions traditionally used in the literature, such as 'songs shared by fewer than 4 birds”, here on the x-axis.}
     \label{fig:supp_song_sampling}
 \end{figure}
 
@@ -475,5 +451,8 @@ Colours and connected lines represent the same song type cluster sung by differe
     \label{fig:supp_pp_checks}
 \end{figure}
 
+\input{table_modelspec}
+\input{table_variablekey}
+\input{table_hypothesis}
 
 \end{document} 
