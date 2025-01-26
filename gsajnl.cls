@@ -307,9 +307,10 @@ urlcolor=hypercolor}
 \lfoot{}
 \cfoot{}
 \rfoot{}
-% \makeatletter
-\fancyhead[RO]{\sffamily\color{black50}\@runningauthor\hspace{2em}\thepage}
-\fancyhead[LE]{\sffamily\color{black50}\thepage\hspace{2em}\@runningtitle}
+% \makeatletter 
+% Remove header so editor doesn't complain
+% \fancyhead[RO]{\sffamily\color{black50}\@runningauthor\hspace{2em}\thepage}
+% \fancyhead[LE]{\sffamily\color{black50}\thepage\hspace{2em}\@runningtitle}
 
 
 % \makeatother
