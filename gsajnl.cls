@@ -622,7 +622,7 @@ THE ABSTRACT\vskip12pt}\let\go\relax\fi
   \setcounter{table}{0}% Reset table counter
   \let\oldthetable\thetable% Capture table numbering scheme
   \renewcommand{\thetable}{S\oldthetable}% Prefix table number with S
-  \section{Supplementary Information}% Set supplementary section
+  \section{}% Set supplementary section
   \let\oldsection\section% Copy \section into \oldsection
   \renewcommand{\section}{% Update \section
     \let\thefigure\oldthefigure% Copy \thefigure into \oldthefigure
