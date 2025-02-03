@@ -143,12 +143,12 @@ urlcolor=hypercolor}
 % Set document colour scheme
 \definecolor{black50}{gray}{0.5} % 50% black for hrules
 \definecolor{color0}{RGB}{0,0,0} % Base color
-\definecolor{urlcolor}{HTML}{537c94} % Urls
+\definecolor{urlcolor}{HTML}{808080} % Urls
 \definecolor{color2}{HTML}{537c94} % ?
-\definecolor{accent_color}{HTML}{3a5c61} % headers and title
-\definecolor{accent_color2}{HTML}{45666b} % headers and title
-\definecolor{accent_color3}{HTML}{4e6e73} % headers and title
-\definecolor{hypercolor}{HTML}{4b7d7a} % references and external links
+\definecolor{accent_color}{HTML}{171717} % headers and title
+\definecolor{accent_color2}{HTML}{171717} % headers and title
+\definecolor{accent_color3}{HTML}{171717} % headers and title
+\definecolor{hypercolor}{HTML}{808080} % references and external links
 \definecolor{table_color}{HTML}{e0e0e0} % table row color
 \definecolor{table_odd}{HTML}{e6e6e6}
 \definecolor{table_even}{HTML}{f5f5f5}
@@ -248,8 +248,32 @@ urlcolor=hypercolor}
 \renewcommand*{\bibfont}{\normalfont\small}
 
 % Table style
+\usepackage{tabularray}
 \arrayrulecolor{color0} % Set the color of the horizontal rules
 \renewcommand{\arraystretch}{1.5} % Increased line spacing
+
+\DefTblrTemplate{firsthead,middlehead,lasthead}{default}{
+}
+\DefTblrTemplate{firstfoot}{default}{
+  \UseTblrTemplate{contfoot}{default}
+  \UseTblrTemplate{caption}{default}
+}
+\DefTblrTemplate{middlefoot}{default}{
+  \UseTblrTemplate{contfoot}{default}
+  \UseTblrTemplate{capcont}{default}
+}
+\ExplSyntaxOn
+\DefTblrTemplate{lastfoot}{default}{
+  \UseTblrTemplate{note}{default}
+  \UseTblrTemplate{remark}{default}
+  \int_compare:nNnTF { \l__tblr_table_page_int } = {1} {
+    \UseTblrTemplate{caption}{default}
+  } {
+    \UseTblrTemplate{capcont}{default}
+  }
+}
+\ExplSyntaxOff
+
 % Table caption setup
 
 \captionsetup[table]{format=tableformat, position=top, skip=5pt}
